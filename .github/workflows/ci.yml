@@ -36,7 +36,7 @@ jobs:
         run: git diff --exit-code -- dist/manifest.json dist/suitecrm-expert-skill-openai.zip dist/suitecrm-expert-skill-opencode.zip
       - name: Upload verified release assets
         if: matrix.os == 'ubuntu-latest' && matrix.node == '24'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: release-assets
           if-no-files-found: error
