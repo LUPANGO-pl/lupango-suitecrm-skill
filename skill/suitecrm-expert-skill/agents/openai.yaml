@@ -1,0 +1,4 @@
+interface:
+  display_name: "SuiteCRM Expert Skill"
+  short_description: "SuiteCRM 8: rozwój, integracje i utrzymanie"
+  default_prompt: "Użyj $suitecrm-expert-skill, aby rozwiązać zadanie SuiteCRM na podstawie wersji i dostępnych dowodów."

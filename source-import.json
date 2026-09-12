@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "base": "suitecrm-8-expert-openai",
+  "suiteDocs8": {
+    "repository": "https://github.com/salesagility/SuiteDocs.git",
+    "commit": "663619ebfbdc28ba828cbe6a34fc685460b920a9",
+    "retrievedAt": "2026-09-06"
+  },
+  "instructions": {
+    "path": "SUITECRM_EXPERT_GPT_CODEX_PACKAGE/instructions/GPT_INSTRUCTION_SOURCE.txt",
+    "sha256": "d9a4692db0f82e9e611f924785ec05d4bec6c4252d33f1c105931ce7a7eadd15"
+  },
+  "note": "Original GPT instructions and access-bypass password are not distributed. Build uses local canonical sources only.",
+  "scopeRevision": "2.0.0: removed standalone 7.x snapshots; only pinned 8.x/shared and evidence-backed legacy-in-8 remain"
+}

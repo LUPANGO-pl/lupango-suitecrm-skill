@@ -1,0 +1,431 @@
+---
+title: Logic Operators
+weight: 10
+---
+
+{{% notice note %}}
+There are several ways to customize field and view metadata. You can use custom vardefs, custom viewdefs, field definition mappers, or other extension mechanisms. For a full overview of all approaches see link:../../../../metadata/customizing-metadata[Customizing View Metadata].
+{{% /notice %}}
+
+When adding this configuration, it can be added to the `vardefs.php` or the `detailviewdefs.php`.
+
+SuiteCRM 8 has 11 operators that can be used in configuration.
+
+== Available Operators
+
+=== Greater than
+
+[source,php]
+----
+    'name' => 'annual_revenue',
+    'comment' => 'Annual revenue for this company',
+    'label' => 'LBL_ANNUAL_REVENUE',
+    'logic' => [
+        'update-when-more-than-10-employees' => [
+            'key' => 'updateValue',
+            'modes' => ['detail', 'edit', 'create'],
+            'params' => [
+                'fieldDependencies' => [
+                    'employees',
+                ],
+                'targetValue' => '1000',
+                'activeOnFields' => [
+                    'employees' =>     [
+                        'operator' => 'greater-than',
+                        'value' => 10
+                    ],
+                ]
+            ]
+        ],
+    ]
+----
+
+In the example above, the Annual Revenue updated to 1000 if Employees is greater than 10.
+
+=== Is Empty
+
+[source,php]
+----
+    'name' => 'description',
+    'comment' => 'Full text of the note',
+    'label' => 'LBL_DESCRIPTION',
+    'displayLogic' => [
+        'hide_on_website' => [
+            'key' => 'displayLogic',
+            'modes' => ['detail', 'edit', 'create'],
+            'params' => [
+                'fieldDependencies' => [
+                    'website',
+                ],
+                'targetDisplayType' => 'none',
+                'activeOnFields' => [
+                    'website' => [['operator' => 'is-empty']]
+                ]
+            ]
+        ],
+    ]
+----
+
+In the example above we are hiding the description field if the website field is empty.
+
+=== Is Equal
+
+[source,php]
+----
+    'name' => 'annual_revenue',
+    'comment' => 'Annual revenue for this company',
+    'label' => 'LBL_ANNUAL_REVENUE',
+    'logic' => [
+        'update-when-10-employees' => [
+            'key' => 'updateValue',
+            'modes' => ['detail', 'edit', 'create'],
+            'params' => [
+                'fieldDependencies' => [
+                    'employees',
+                ],
+                'targetValue' => '1000',
+                'activeOnFields' => [
+                    'employees' =>     [
+                        'operator' => 'is-equal',
+                        'value' => 10
+                    ],
+                ]
+            ]
+        ],
+    ]
+----
+
+In the example above when employees is 10, update Annual Revenue to 1000.
+
+=== Less Than
+
+[source,php]
+----
+    'name' => 'annual_revenue',
+    'comment' => 'Annual revenue for this company',
+    'label' => 'LBL_ANNUAL_REVENUE',
+    'logic' => [
+        'display' => [
+            'key' => 'updateValue',
+            'modes' => ['detail', 'edit', 'create'],
+            'params' => [
+                'fieldDependencies' => [
+                    'employees',
+                ],
+                'targetValue' => '500',
+                'activeOnFields' => [
+                    'employees' =>     [
+                        'operator' => 'less-than',
+                        'value' => 5
+                    ],
+                ]
+            ]
+        ],
+    ]
+----
+
+In the example above, the Annual Revenue updated to 1000 if Employees is less than 10.
+
+=== Not Empty
+
+[source,php]
+----
+    'name' => 'annual_revenue',
+    'comment' => 'Annual revenue for this company',
+    'label' => 'LBL_ANNUAL_REVENUE',
+    'logic' => [
+        'update-when-employee-set' => [
+            'key' => 'updateValue',
+            'modes' => ['detail', 'edit', 'create'],
+            'params' => [
+                'fieldDependencies' => [
+                    'employees',
+                ],
+                'targetValue' => '1',
+                'activeOnFields' => [
+                    'employees' =>     [
+                        'operator' => 'not-empty',
+                    ],
+                ]
+            ]
+        ],
+    ]
+----
+
+In the example above if the Employee field has any value, then Annual Revenue will update to have the value 1.
+
+=== Is True
+
+[source,php]
+----
+    'name' => 'trackers_enabled',
+    'vname' => 'LBL_TRACKER_LINKS_ENABLED',
+    'type' => 'bool',
+    'footnotes' => [
+        [
+            'labelKey' => 'LBL_TRACKERS_ENABLED_FOOTNOTE',
+            'displayModes' => ['edit', 'create', 'detail'],
+            'activeOn' => [
+                [
+                    'operator' => 'is-true',
+                ]
+            ]
+        ]
+    ]
+----
+
+In the example above, the footnote will be displayed when the trackers_enabled field is true (e.g. true, "true", 1 and "1").
+
+=== Is False
+
+[source,php]
+----
+    'name' => 'trackers_enabled',
+    'vname' => 'LBL_TRACKER_LINKS_ENABLED',
+    'type' => 'bool',
+    'footnotes' => [
+        [
+            'labelKey' => 'LBL_TRACKERS_DISABLED_FOOTNOTE',
+            'displayModes' => ['edit', 'create', 'detail'],
+            'activeOn' => [
+                [
+                    'operator' => 'is-false',
+                ]
+            ]
+        ]
+    ]
+----
+
+In the example above, the footnote will be displayed when the trackers_enabled field is false (e.g. false, "false", 0 and "0").
+
+=== Any Value
+
+[source,php]
+----
+    'name' => 'annual_revenue',
+    'comment' => 'Annual revenue for this company',
+    'label' => 'LBL_ANNUAL_REVENUE',
+    'logic' => [
+        'update-when-employee-has-value' => [
+            'key' => 'updateValue',
+            'modes' => ['detail', 'edit', 'create'],
+            'params' => [
+                'fieldDependencies' => [
+                    'employees',
+                ],
+                'targetValue' => '100',
+                'activeOnFields' => [
+                    'employees' => [
+                        ['operator' => 'any-value']
+                    ],
+                ]
+            ]
+        ],
+    ]
+----
+
+The `any-value` operator always returns true regardless of the field's value. This is useful when you want logic to trigger on any change to the dependent field.
+
+=== Previous Value Equal
+
+[source,php]
+----
+'name' => 'contact_name',
+'rname' => 'last_name',
+'id_name' => 'contact_id',
+'vname' => 'LBL_CONTACT_NAME',
+'type' => 'relate',
+'logic' => [
+    'set-contact-name-blank-on-newvalue' => [
+        'key' => 'setEmpty',
+        'modes' => ['edit', 'create'],
+        'triggeringStatus' => ['onValueChange'],
+        'params' => [
+            'fieldDependencies' => [
+                'parent_type',
+            ],
+            'activeOnFields' => [
+                'parent_type' => [
+                    [
+                        'operator' => 'previous-value-equal',
+                        'values' => ['Contacts']
+                    ],
+                    [
+                        'operator' => 'not-equal',
+                        'values' => ['Contacts']
+                    ]
+                ],
+            ]
+        ]
+    ],
+]
+----
+
+In the example above, the contact_name field will be cleared when parent_type previously had the value Contacts and has now changed to a different value.
+
+The previous-value-equal operator checks that the field's value before the change matched the given value(s).
+
+It is used in combination with not-equal to confirm the field has since changed away from that value.
+
+=== Previous Value Not Equal
+
+[source,php]
+----
+'name' => 'contact_name',
+'rname' => 'last_name',
+'id_name' => 'contact_id',
+'vname' => 'LBL_CONTACT_NAME',
+'type' => 'relate',
+'logic' => [
+    'set-contact-name-blank-on-previous-value' => [
+        'key' => 'setEmpty',
+        'modes' => ['edit', 'create'],
+        'triggeringStatus' => ['onValueChange'],
+        'params' => [
+            'fieldDependencies' => [
+                'parent_type',
+            ],
+            'activeOnFields' => [
+                'parent_type' => [
+                    [
+                        'operator' => 'previous-value-not-equal',
+                        'values' => ['Contacts']
+                    ],
+                    [
+                        'operator' => 'is-equal',
+                        'values' => ['Contacts']
+                    ]
+                ],
+            ]
+        ]
+    ],
+]
+----
+
+In the example above, the contact_name field will be cleared when parent_type previously did not have the value Contacts and has now been changed to Contacts.
+
+The previous-value-not-equal operator checks that the field's value before the change did not match the given value(s).
+
+It is used in combination with is-equal to confirm the field has since changed to that value.
+
+=== Not Equal
+
+[source,php]
+----
+    'name' => 'annual_revenue',
+    'comment' => 'Annual revenue for this company',
+    'label' => 'LBL_ANNUAL_REVENUE',
+    'logic' => [
+        'update-not-10-employees' => [
+            'key' => 'updateValue',
+            'modes' => ['detail', 'edit', 'create'],
+            'params' => [
+                'fieldDependencies' => [
+                    'employees',
+                ],
+                'targetValue' => '50000',
+                'activeOnFields' => [
+                    'employees' =>     [
+                        'operator' => 'not-equal',
+                        'values' => ['10']
+                    ],
+                ]
+            ]
+        ],
+    ]
+----
+
+In the example above, if the employees field is not equal to 10 then the value will be updated to 50000.
+
+You can add the check to more than one value by adding more values:
+
+[source,php]
+----
+    'employees' => [
+        'operator' => 'not-equal',
+        'values' => ['10', '15', '25']
+    ],
+----
+
+== Multiple operators on the same field
+
+You can also use multiple operators on the same field:
+
+[source,php]
+----
+    'name' => 'industry',
+    'comment' => 'The company belongs in this industry',
+    'label' => 'LBL_INDUSTRY',
+    'displayLogic' => [
+        'hide_on_name' => [
+            'key' => 'displayType',
+            'modes' => [
+                0 => 'detail',
+                1 => 'edit',
+                2 => 'create',
+            ],
+            'targetDisplayType' => 'none',
+            'params' => [
+                'fieldDependencies' => [
+                    'employees'
+                ],
+                'activeOnFields' => [
+                    'employees' => [
+                        //AND
+                        [
+                            'operator' => 'greater-than',
+                            'value' => 5
+                        ],
+                        [
+                            'operator' => 'less-than',
+                            'value' => 25
+                        ],
+                        [
+                            'operator' => 'not-equal',
+                            //OR
+                            'values' => [15, 20]
+                        ],
+                        ['operator' => 'not-empty'],
+                    ],
+                ],
+            ],
+        ],
+    ],
+----
+
+
+== Comparing to a field instead of a value
+
+For operators where you compare with a single value using `'value' => <some-value>`, it is possible to instead compare with another field's value, by using `'field' => '<field-name>'`
+
+Field comparison is available on the following operators:
+
+* less-than
+* greater-than
+* is-equal
+* not-equal
+
+The following snippet provides an example of how to use the `field` instead of the `value`
+
+[source,php]
+----
+    'name' => 'prefered_contact',
+    'displayLogic' => [
+        'hide_on_single_phone' => [
+            'key' => 'displayLogic',
+            'modes' => ['detail', 'edit', 'create'],
+            'params' => [
+                'fieldDependencies' => [
+                    'phone_office',
+                ],
+                'targetDisplayType' => 'none',
+                'activeOnFields' => [
+                    'phone_office' => [
+                        'operator' => 'is-equal',
+                        'field' => 'phone_fax'
+                    ],
+                ]
+            ]
+        ],
+    ]
+----

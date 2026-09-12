@@ -1,0 +1,98 @@
+---
+Title: Advanced OpenAdmin
+weight: 70
+---
+
+:experimental:   ////this is here to allow btn:[]syntax used below
+
+:imagesdir: /images/en/admin
+
+:toc:
+
+== AOS Settings
+
+The Advanced OpenSales suite of modules allow you to
+manage the Post-Opportunity Sales processes such as Quoting, Invoicing
+and recurring Contracting.
+
+image:AdminAOSSettings.png[Advanced OpenSales Settings]
+
+You can customise the following settings within the AOS Settings:
+
+* *Renewal Reminder Period*  This defines how many days before the
+Contract End Date that a reminder call should be created.
+* *Initial Invoice Number*  Allows users to set the initial invoice
+number. For example 20001.
+* *Initial Quote Number*  Allows users to set the initial quote number.
+For example 456.
+* *Enable Line Items Groups*  If selected then users will be able to
+bundle line items into groups. If this is not selected then you will not
+be able to use the AOS Group functionality. 
+{{% notice note %}}
+The Enable Line Item Groups setting should
+be selected before using AOS.  It is difficult to migrate from/to groups
+once Quotes/Invoices have been created.
+{{% /notice %}}
+* *Add Tax to Line Total*  If this is selected then the Tax will be added
+into the Line Total on Line Items. If this is not the selected the Line
+Total will not include Tax.
+
+Once configured, click btn:[Save] to apply your AOS Settings.
+
+== AOD Settings
+
+Enable or disable *SuiteCRM*'s full text global search here.
+
+image:AdminAODSettings.png[Advanced OpenDiscovery Settings]
+
+The full text global search is powered by Zend Lucene search framework. 
+The search works very similar to the standard global search, but provides the enhanced 
+functionality of searching text in documents and other files, compared to the record-level 
+search provided by the standard global search.
+
+See the link:../../../user/introduction/user-interface/search[Search] documentation in the user
+guide for more information on searching in *SuiteCRM*.
+
+== AOP Settings
+
+Advanced OpenPortal (AOP) extends the link:../../../user/customer-service/cases[Cases] module to support a customer-facing portal and email-based case creation and updates. Configure it here.
+
+image:AdminAOPSettings.png[title="Advanced OpenPortal Settings"]
+
+[cols="30,70",frame="none",grid="none"]
+|===
+|*Enable AOP*|Enables or disables the Advanced OpenPortal functionality across SuiteCRM.
+|*Enable Portal*|Whether the customer-facing Joomla portal is active.
+|*Joomla URL*|The URL of the connected Joomla portal site.
+|*Support From Name*|The name used in the From field of all portal-related email notifications sent to contacts.
+|*Support From Address*|The email address used in the From field of portal-related emails.
+|*Case Distribution Method*|How cases created from inbound email or the portal are automatically assigned. Options: Single User (assign to a specified user), Round Robin by Role, Round Robin by Security Group.
+|*Email Templates*|Select the email templates used for: new portal user welcome, contact case notification, case creation confirmation, and case closure notification. Templates are managed in the link:../../../user/marketing-outreach/email-templates[Email Templates] module.
+|===
+
+=== Portal Setup
+
+The Joomla portal component can be downloaded from the https://suitecrm.com/resources/suitecrm-joomla-portal-plug-in/[SuiteCRM Joomla Portal Plug-in page^]. Install it using the Joomla Extension Manager, then configure the SuiteCRM URL and a valid SuiteCRM username and password under *Components → advancedopen-portal* in Joomla.
+
+Once configured, two menu items can be added to your Joomla portal:
+
+* *List Cases* — shows a list of all cases the contact has logged, with filters for State and keyword search
+* *New Case* — allows contacts to create cases in SuiteCRM from the portal
+
+=== Creating Portal Users
+
+To give a Contact access to the portal, open the Contact record in SuiteCRM and click *Create Portal User* (or find it in the action menu if action menus are enabled). This creates a Joomla account for the contact and emails them their portal credentials.
+
+
+== Business Hours
+
+Specify business working hours here. 
+
+These settings will determine when workflows set to run 
+'Only In The Scheduler' will run and will be used when "Consider Working days" is set on 
+link:../../../user/core-modules/projects[Project] records.
+
+image:AdminBusinessHours.png[Business Hours]
+
+
+

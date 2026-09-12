@@ -1,0 +1,21 @@
+name: Improvement proposal
+description: Suggest a workflow, documentation correction, or tool improvement.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What task or problem would this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Explain the SuiteCRM 8 use case and what a successful result looks like.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sources and alternatives
+      description: Link relevant primary documentation and describe any current workaround.

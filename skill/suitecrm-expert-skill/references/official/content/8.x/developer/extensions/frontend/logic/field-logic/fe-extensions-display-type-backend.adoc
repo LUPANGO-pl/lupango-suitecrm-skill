@@ -1,0 +1,512 @@
+---
+title: "Show/hide field based on a backend calculation"
+weight: 40
+---
+
+:imagesdir: /images/en/8.x/developer/extensions/front-end/logic/field-logic/
+
+
+
+== 1. Introduction
+
+The `displayTypeBackend` field logic allows to have the show/hide logic done on the backend.
+
+When the conditions for the dependencies on other fields are met, a request is sent to the backend. The value resulting from that backend call is going to be user to hide / show the field.
+
+This allows for more complex calculations. Like calculations where you need values from multiple modules or from external sources.
+
+This guide describes the steps to setup a backend calculation to show/hide a field.
+
+=== 1.1 Example scenario
+
+As an example this guide is going to use the following scenario.
+
+On the `Cases` module we want to show/hide the `priority` field based on the values from the `type` and the `subject` (name) fields.
+
+The rules for showing/hiding are the `priority` are the following:
+
+. Show priority on Error
+** When the `type` field has the value `User`
+** and the `name` field contains `Error`. (the `Subject` is the same as `name`)
+** Show `priority`
+
+. Show priority on Warning
+** When the `type` field has the value `User`
+** and the `name` field contains `Warning`. (the `Subject` is the same as `name`)
+** Show `priority`
+
+. Hide priority otherwise:
+.. When the `type` field has the value `User`
+.. and the `name` field does not contain `Warning` nor `Error`. (the `Subject` is the same as `name`)
+.. Hide `priority`
+
+The following gif shows an example of what we want:
+
+image:displayTypeBackend-default-hide-example.gif[Backend Calculated Display Type Example]
+
+== 2. Logic Metadata definition
+
+{{% notice note %}}
+There are several ways to customize field and view metadata. You can use custom vardefs, custom viewdefs, field definition mappers, or other extension mechanisms. For a full overview of all approaches see link:../../../../../metadata/customizing-metadata[Customizing View Metadata].
+{{% /notice %}}
+
+The first thing to define is the `logic` entry in the metadata. This is where we are going to define the triggers for our backend calculation.
+
+The configuration for the logic can be added to the `vardefs.php` or the `detailviewdefs.php`.
+
+In the following example we are going to add them to the `Cases` module `detailviewdefs.php`.
+
+
+=== 2.1 Steps to add the logic on the custom detailviewdefs.php
+
+. Copy the core Cases `detailviewdefs.php` to the custom folder:
+.. From: `public/legacy/modules/Cases/metadata/detailviewdefs.php`
+.. To: `public/legacy/custom/modules/Cases/metadata/detailviewdefs.php`
+. Replace the `priority` entry on the custom `detailviewdefs.php` with the code on the snippet on link:./#_2_2_logic_definition[2.2 Logic definition] section
+. Re-set permissions (may not be needed, this will depend on your configuration)
+. Run `Repair and Rebuild` on Admin menu
+. (optional) If you have some kind of php cache like opcache or APCu, you will need to re-start apache.
+
+=== 2.2 Logic definition
+
+The following were the changes applied in order to have the logic triggering when we want.
+
+One thing to note on the following definition is that the field is configured to be hidden by default, which is archived by setting the `'display' => 'none'`.
+
+From:
+[source,php]
+----
+    array(
+      0 =>
+      array(
+        'name' => 'case_number',
+        'label' => 'LBL_CASE_NUMBER',
+      ),
+      1 => 'priority',
+    ),
+----
+
+To:
+
+[source,php]
+----
+
+        array(
+          0 =>
+          array(
+            'name' => 'case_number',
+            'label' => 'LBL_CASE_NUMBER',
+          ),
+          1 =>
+          [
+            'name' => 'priority',
+            'display' => 'none',
+            'logic' => [
+                'calculate-priority-display' => [
+                    'key' => 'displayTypeBackend',
+                    'modes' => ['detail', 'edit', 'create'],
+                    'params' => [
+                        'fieldDependencies' => [
+                            'type',
+                            'name',
+                        ],
+                        'process' => 'calculate-priority-display',
+                        'activeOnFields' => [
+                            'type' => ['User'],
+                            'name' => [
+                                ['operator' => 'not-empty' ]
+                            ]
+                        ]
+                    ]
+                ],
+          ],
+        ),
+
+----
+
+
+==== 2.2.1 Logic Properties description
+
+* Key
+. The `key` within the named `logic` array is stating which logic type will be used. To use backend logic calculations we need to set `displayTypeBackend`.
+
+* Modes
+- Modes are view modes we want our `displayTypeBackend` logic to take effect on, in this example we want on `detail`, `edit` and `create`.
+Another example of a `mode` that could be selected could be `list` for example.
+
+===== Params
+
+====== Field Dependencies
+
+`fieldDependencies` is where we declare the field(s) that we want our logic to depend on.
+
+In this example we depend on `type` and `name` as they are the two fields that the scenario rules depend on
+
+[source,php]
+----
+
+...
+'fieldDependencies' => [
+    'type',
+    'name',
+]
+
+...
+
+----
+
+===== Active on Fields
+
+`activeOnFields` is where you declare the field/value conditions that trigger the logic to run. In this case call to the backend to determine whether to show or hide the field.
+
+As stated on the scenario conditions we want:
+
+. When the `type` field has value `User`
+
+So we are going to set the logic to only trigger when the `type` field has value `User`
+
+For the `name` field we have multiple value dependencies described on the scenario conditions:
+
+. the `name` field contains `Error`. (the `Subject` is the same as `name`)
+. the `name` field contains `Warning`. (the `Subject` is the same as `name`)
+. the `name` field does not contain `Warning` nor `Error`. (the `Subject` is the same as `name`)
+
+So we are going to set the logic to just check if the `name` field is not empty and let the backend do the work of checking the rules in more detail.
+
+With this in mind we've set the `activeOnFields` as:
+
+[source,php]
+----
+
+'activeOnFields' => [
+    'type' => ['User'],
+    'name' => [
+        ['operator' => 'not-empty' ]
+    ]
+]
+
+----
+
+===== Backend requests triggering
+
+Please have in mind that when we have entries for multiple fields within `activeOnFields`, these conditions work like an `AND`.
+Meaning that the logic is only triggered when *all* the conditions are *true*.
+
+In our example the logic is only going to be triggered when the `type` is `User` *AND* the `name` is not empty.
+
+Otherwise, nothing will happen, i.e. no request is going to be made to the backend.
+
+The following gif shows the requests that are done and when.
+
+image:displayTypeBackend-calls-example.gif[Backend Value Update backend requestsExample]
+
+
+== 3. Backend Handler
+
+
+{{% notice note %}}
+When making these changes be sure to make them within an extension on the 'extensions' directory, e.g.: 'extensions/<my-extension>/...'
+{{% /notice %}}
+
+After defining the logic metadata we need to work on the backend code that is going to handle the requests done.
+
+The `displayTypeBackend` logic uses the `Process` api. The requests done to the `Process` api are handler by php classes implementing the `ProcessHandlerInterface`
+
+In the following example we are going to use the existing `extensions/defaultExt` to add our custom code.
+
+
+=== 3.1 Steps to add a new process handler to extensions
+
+. Create the folder `extensions/defaultExt/modules/Cases/Service/Fields`
+.. This is a best practice not a hard requirement
+.. As long as you add under the `extensions/<your-ext>/backend` or `extensions/<your-ext>/modules` it should work.
+. Within that folder create the `CaseCalculatePriorityDisplay.php`, i.e. `extensions/defaultExt/modules/Cases/Service/Fields/CaseCalculatePriorityDisplay.php`
+.. If you are not using the recommended path, make sure that the `namespace` follows the one you are using
+.. On our example the namespace is `namespace App\Extension\defaultExt\modules\Cases\Service\Fields;`
+. On `CaseCalculatePriorityDisplay.php` add the code on the snippet on link:./#_3_2_process_handler_implementation[3.2 Process handler implementation] section
+. Re-set permissions (may not be needed, this will depend on your configuration)
+. Run `php bin/console cache:clear` or delete the contents of the cache folder under the root of the project
+. (optional) If you have some kind of php cache like opcache or APCu, you will need to re-start apache.
+
+=== 3.2 Process handler implementation
+
+A class is recognized as a `ProcessHandler` if it implements the `ProcessHandlerInterface`.
+
+Furthermore, for it to be matched with request made by the logic metadata we've defined, it needs the following:
+
+- Set the `ProcessType` to be the same as the value that was defined on the metadata, in this example it is `calculate-priority-display`
+- On the response data include a `value` entry that is the value that is going to be used to update the field value on the frontend
+
+The following snippet contains a sample implementation of the process handler for our scenario:
+
+[source,php]
+----
+<?php
+
+namespace App\Extension\defaultExt\modules\Cases\Service\Fields;
+
+use ApiPlatform\Core\Exception\InvalidArgumentException;
+use App\Process\Entity\Process;
+use App\Process\Service\ProcessHandlerInterface;
+
+class CaseCalculatePriorityDisplay implements ProcessHandlerInterface
+{
+    protected const MSG_OPTIONS_NOT_FOUND = 'Process options are not defined';
+    protected const MSG_INVALID_TYPE = 'Invalid type';
+    public const PROCESS_TYPE = 'calculate-priority-display';
+
+    /**
+     * CaseCalculatePriority constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getProcessType(): string
+    {
+        return self::PROCESS_TYPE;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function requiredAuthRole(): string
+    {
+        return 'ROLE_USER';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getRequiredACLs(Process $process): array
+    {
+        $options = $process->getOptions();
+        $module = $options['module'] ?? '';
+        $id = $options['id'] ?? '';
+
+        $editACLCheck =  [
+            'action' => 'edit',
+        ];
+
+        if ($id !== '') {
+            $editACLCheck['record'] = $id;
+        }
+
+        return [
+            $module => [
+                $editACLCheck
+            ],
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function configure(Process $process): void
+    {
+        //This process is synchronous
+        //We aren't going to store a record on db
+        //thus we will use process type as the id
+        $process->setId(self::PROCESS_TYPE);
+        $process->setAsync(false);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function validate(Process $process): void
+    {
+
+        $options = $process->getOptions();
+        $type = $options['record']['attributes']['type'] ?? '';
+        if (empty($type)) {
+            throw new InvalidArgumentException(self::MSG_OPTIONS_NOT_FOUND);
+        }
+
+        if ($type !== 'User') {
+            throw new InvalidArgumentException(self::MSG_INVALID_TYPE);
+        }
+
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function run(Process $process)
+    {
+        $options = $process->getOptions();
+
+        $type = $options['record']['attributes']['type'] ?? '';
+        $name = $options['record']['attributes']['name'] ?? '';
+
+        $value = 'none';
+        if (strpos(strtolower($name), 'warning') !== false) {
+            $value = 'show';
+        }
+
+        if (strpos(strtolower($name), 'error') !== false) {
+            $value = 'show';
+        }
+
+        $responseData = [
+            'value' => $value
+        ];
+
+        $process->setStatus('success');
+        $process->setMessages([]);
+        $process->setData($responseData);
+    }
+}
+----
+
+==== 3.2.1 Process handler interface methods
+
+
+**getProcessType()**
+
+In this we need to return the id of our process, the same that is defined on the metadata logic `key` entry. In our example: `calculate-priority-display`
+
+**requiredAuthRole()**
+
+Our process should only be accessed by logged-in users, thus we return `ROLE_USER`;
+
+**getRequiredACLs()**
+
+For new cases, we only want users with `edit` access to the Cases module to be able to call our ProcessHandler. Thus, we defined:
+
+[source,php]
+----
+        $editACLCheck =  [
+            'action' => 'edit',
+        ];
+----
+
+For already existing cases we need an extra check to make sure that the users has access to that specific record. Therefore, we conditionally add a check for the record id:
+
+[source,php]
+----
+        if ($id !== '') {
+            $editACLCheck['record'] = $id;
+        }
+----
+
+**validate()**
+
+The ProcessHandler won't be able to do any calculations if the Case `type` is not set. If that happens we should throw an exception:
+
+[source,php]
+----
+        $type = $options['record']['attributes']['type'] ?? '';
+        if (empty($type)) {
+            throw new InvalidArgumentException(self::MSG_OPTIONS_NOT_FOUND);
+        }
+----
+
+And since our business logic states that this should only run if the `type` is `User` we've added another check:
+
+[source,php]
+----
+        if ($type !== 'User') {
+            throw new InvalidArgumentException(self::MSG_INVALID_TYPE);
+        }
+----
+
+**run()**
+
+This is the method that actually does what the process is supposed to do and returns the appropriate response.
+
+Please have in mind that for the `displayTypeBackend` logic, the response always needs to contain `value` entry like the following:
+
+[source,php]
+----
+        $responseData = [
+            'value' => $value
+        ];
+
+        ...
+
+        $process->setData($responseData);
+----
+
+==== 3.2.2 Process handler implementation description
+
+Let's take an in depth look at the implementation of our logic, located in the `run()` method.
+
+**Get the input record**
+
+One of the inputs we need for our logic to work is the data in the record.
+
+To get the data sent in the request you can call the `getOptions` method of the process
+
+[source,php]
+----
+$options = $process->getOptions();
+----
+
+The `displayTypeBackend` logic, besides other data, sends the current data on the record.
+It sends a `record` entry that follows the standard format for records, the same one that is used on the api to get a record.
+The field values of the record are located within the `attributes` entry:
+
+[source,php]
+----
+$options = $process->getOptions();
+$record = $options['record'];
+$attributes = $record['attributes'];
+----
+
+To get a field on the record we could do (in this example we are getting the 'type'):
+
+[source,php]
+----
+$options = $process->getOptions();
+$record = $options['record'];
+$attributes = $record['attributes'];
+$type = $attributes['type'];
+----
+
+
+**Calculate the priority display type according to the name**
+
+The rules in our example define that the priority is going to change depending on the value of the name field.
+For that we get the value of the name field from the record, then according to its contents we calculate if priority should show or hide.
+
+[source,php]
+----
+$name = $options['record']['attributes']['name'] ?? '';
+
+$value = 'none';
+if (strpos(strtolower($name), 'warning') !== false) {
+    $value = 'show';
+}
+
+if (strpos(strtolower($name), 'error') !== false) {
+    $value = 'show';
+}
+----
+
+**Set the priority display type**
+
+Finally, for all of this to work we set the display type for the priority on the response data.
+
+[source,php]
+----
+$responseData = [
+    'value' => $value
+];
+
+$process->setStatus('success');
+$process->setMessages([]);
+$process->setData($responseData);
+
+----
+
+=== 3. More Info on ProcessHandlers
+
+For more information how to create a process handler see the link:../../../../backend/process-api/process-handler[Adding a Process Handler] guide.
+
+== 4. More examples
+
+For more information on different field logic see link:../[here.]

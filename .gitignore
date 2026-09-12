@@ -1,0 +1,7 @@
+.validation-deps/
+dist/.build-*/
+node_modules/
+dist/archive/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,11 @@
+# Sources and version routing
+
+Use product evidence in this order: official documentation matching the exact release, exact-release source/artifacts, and actual installation evidence for local topology and active execution paths. Resolve discrepancies explicitly: project modifications explain observed behavior but do not establish official support. Engineering playbooks guide decisions; they cannot prove that an interface or feature exists. Clearly label community evidence.
+
+- **SuiteCRM 8:** use [index.md](index.md). Its pinned SuiteDocs source is recorded in [provenance.json](provenance.json). Distinguish Symfony backend, Angular frontend, metadata, API V8 and retained legacy. A matching word in a 7.x guide is not evidence that legacy owns the task in 8.x. Trace the actual writer or renderer.
+- **Retained legacy:** read [legacy-in-8-index.md](legacy-in-8-index.md) only for a proven 8.x path. Whole 7.x manuals are outside this skill.
+- **API V8:** shared documentation can apply across product versions; establish the actual route, authentication, payload and grant support in the target release. GraphQL in an integration brief does not establish a native GraphQL endpoint.
+- **Current support, compatibility, security and release commands:** verify dated official lifecycle policy, exact-release compatibility, release notes, requirements and tagged artifacts as applicable. With no network, identify the snapshot and state the decision is unconfirmed; accept a supplied dated official source only within its scope. Moving branches are discovery leads, not exact-release contracts.
+- **Technology lists:** database/server names in a brief are discovery inputs, not claims that SuiteCRM supports them. Establish support before recommending PostgreSQL, IIS, container images or a particular runtime combination.
+
+The 8.x index, retained-component evidence map and provenance ship with every distribution. Standalone 7.x sources are excluded. Retained legacy must have supporting 8.x evidence from the pinned revision; no generic 7.x source can be relabelled as 8.x. Preserve GFDL notices when reusing documentation. Cite the page URL associated with a retrieved reference, distinguish official procedure from local recommendations, and disclose unresolved conflict rather than guessing.

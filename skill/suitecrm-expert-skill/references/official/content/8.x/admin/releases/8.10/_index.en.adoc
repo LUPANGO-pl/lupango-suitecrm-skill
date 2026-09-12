@@ -1,0 +1,542 @@
+---
+title: "8.10 Releases"
+weight: 9780
+aliases:
+  - /8.x/admin/releases/8.10/
+---
+
+:toc:
+:toc-title:
+:toclevels: 1
+:icons: font
+:imagesdir: /images/en/8.x/admin/release
+
+== 8.10.2
+
+_Released 31st July 2026_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.10.2[GitHub — Download v8.10.2]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+
+===  icon:check[] Release Notes
+
+==== Important Notes
+
+===== SOAP Portal Removal
+{{% notice warning %}}
+This release removes SOAP Portal support. If you are using SOAP Portal, please migrate to REST API or other supported methods.
+{{% /notice %}}
+
+===== API v4 Query Config
+
+A new configuration option `disable_v4_api_query_where` has been added. This option allows administrators to disable the v4 API query where clause for improved performance. By default, this option is set to `true`, meaning the v4 API query where clause is disabled. To enable it, set the option to `false` in the `config_override.php`.
+
+==== icon:lock[] Security
+
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-71549[CVE-2026-71549: Improper Access Control ] | https://github.com/SuiteCRM/SuiteCRM-Core/security/advisories/GHSA-mjjw-75gv-j5g5[GitHub Advisory] | Reporter: prakhar0x01
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: Improper Access Control ] | https://github.com/SuiteCRM/SuiteCRM-Core/security/advisories/GHSA-7qwx-m7r8-fc9f[GitHub Advisory] | Reporter: MichaelPasternak1337
+
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-61648[CVE-2026-61648: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-pqq6-v2mj-hrm2[GitHub Advisory] | Reporter: Nguy Minh Tuan (@minhtuanact) of Sun* Cyber Security Research Team
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-61649[CVE-2026-61649: SSRF Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-r665-27q3-wvg8[GitHub Advisory] | Reporter: morimori-dev
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-61650[CVE-2026-61650: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-qmh9-m7g7-pxxp[GitHub Advisory] | Reporter: larlarua
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-61651[CVE-2026-61651: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-7cj5-pc2f-9xgv[GitHub Advisory] | Reporter: Security Researcher Ahmed Mosaa
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-61653[CVE-2026-61653: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-5m7h-v4v6-2r8h[GitHub Advisory] | Reporter: Nguy Minh Tuan (@minhtuanact) of Sun* Cyber Security Research Team
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-6c7r-7g6m-29f9[GitHub Advisory] | Reporter: marginaldeer
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-69134[CVE-2026-69134: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-3phg-q9w9-4pqw[GitHub Advisory] | Reporter: Tristan Madani (@TristanInSec) from Talence Security
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-69135[CVE-2026-69135: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-gcc4-hvpc-cgvv[GitHub Advisory] | Reporter: Security Researcher Ahmed Mosaa
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-69136[CVE-2026-69136: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-3mjp-45mc-3256[GitHub Advisory] | Reporter: Security Researcher Ahmed Mosaa
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-69137[CVE-2026-69137: SSRF Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-72r3-24x4-j46c[GitHub Advisory] | Reporter: Max Gabriel (EntroVyx)
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-69140[CVE-2026-69140: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-xg3m-xvc9-j55j[GitHub Advisory] | Reporter: Nguy Minh Tuan (@minhtuanact) of Sun* Cyber Security Research Team
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-69141[CVE-2026-69141: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-wphj-qjgj-4j23[GitHub Advisory] | Reporter: Nguy Minh Tuan (@minhtuanact) of Sun* Cyber Security Research Team
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-69142[CVE-2026-69142: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-pjc8-2w2x-xcgf[GitHub Advisory] | Reporter: AdrianJunge
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-69143[CVE-2026-69143: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-rc6r-hwhg-7pfg[GitHub Advisory] | Reporter: Security Researcher Ahmed Mosaa
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-69144[CVE-2026-69144: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-j2r4-r4wh-339v[GitHub Advisory] | Reporter: Yash Shendge (GitHub: ashrexon)
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-63111[CVE-2026-63111: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-gx3x-3f4c-cjmx[GitHub Advisory] | Reporter: Pedro J. Núñez-Cacho Fuentes (tunelko / blogs.tunelko.com)
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-63213[CVE-2026-63213: Path Traversal] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-wfvr-mpq2-257w[GitHub Advisory] | Reporter: Khương Anh (@leduckhuong)
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-63214[CVE-2026-63214: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-gjgm-wrr6-hrmp[GitHub Advisory] | Reporter: radoi-teodor
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-63215[CVE-2026-63215: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-pmhw-r27f-w92m[GitHub Advisory] | Reporter: Furkan KARAARSLAN https://www.linkedin.com/in/furkan-k/
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-63217[CVE-2026-63217: IDOR Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-m5xj-rrwv-g3q3[GitHub Advisory] | Reporter: geo-chen
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-63218[CVE-2026-63218: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-v624-ccrf-9v97[GitHub Advisory] | Reporter: Yash Shendge (GitHub: ashrexon)
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-4fhr-x4wr-fwqg[GitHub Advisory] | Reporter: Anonymous
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-71550[CVE-2026-71550: LFI to RCE Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-cx24-rr7r-mxrg[GitHub Advisory] | Reporter: amwhoi
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-71548[CVE-2026-71548: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-239h-ffjr-v957[GitHub Advisory] | Reporter: Ahmed Alshammari (isch1zo)
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-2hv5-wj8h-mv8m[GitHub Advisory] | Reporter: AdrianJunge
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: RCE Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-4773-c8fh-3rww[GitHub Advisory] | Reporter: MichaelPasternak1337
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: SQL Injection] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-22rh-qc6x-cvgw[GitHub Advisory] | Reporter: Security Researcher Ahmed Mosaa
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-rxx9-4rg7-c3qp[GitHub Advisory] | Reporter: voraci0us
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-8rjm-vpj3-hch8[GitHub Advisory] | Reporter: usmonkhudoyorov
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-jhhh-64wx-fj9c[GitHub Advisory] | Reporter: adilkhan7546
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-rc46-hjjp-4jv5[GitHub Advisory] | Reporter: MichaelPasternak1337
+* CVE: https://nvd.nist.gov/vuln/detail/Pending[CVE-Pending: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-6jf7-hh5p-8fcm[GitHub Advisory] | Reporter: TA-MU-TA
+
+==== icon:bug[] Bug Fixes
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/936[PR #936] - Update Legacy Migration Description to 7.15.x
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/943[PR #943] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/910[#910]: Filters are forgotten when leaving module
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/944[PR #944] - Fix Email Signature not loading when opening a compose modal
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/945[PR #945] - Fix saving a field with metadata in module builder shows the field as custom
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/904[PR #904] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/832[#832]: Boolean/checkbox filter returns inverted or no results
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/948[PR #948] - Update dependencies
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/954[PR #954] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/930[#930]: variable injector not retrieving module language
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/955[PR #955] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/933[#933]: Fix Notes file and filename fields both using LBL_FILENAME as vname
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/974[PR #974] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/973[#973]: add missing parameter
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/980[PR #980] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/937[#937]: Drafts confirmation is too long
+* Update Classic View rendering to cope with the deprecation of the `unload` browser event.
+* Fix Print as PDF bulk action
+
+* https://github.com/SuiteCRM/SuiteCRM/pull/9773[PR #9773] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9772[#9772]: Importing text emails with attachments
+* https://github.com/SuiteCRM/SuiteCRM/pull/10807[PR #10807] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10804[#10804]: CalendarSync sync-back preserves external fields
+* https://github.com/SuiteCRM/SuiteCRM/pull/10478[PR #10478] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10477[#10477]: Do not exclude email sends from the message queue without filtering by campaign
+* https://github.com/SuiteCRM/SuiteCRM/pull/10822[PR #10822] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/8289[#8289]: Fix Import data for floating point fields wrongly saved
+* https://github.com/SuiteCRM/SuiteCRM/pull/10823[PR #10823] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/8951[#8951]: Fix rich text field validation
+* https://github.com/SuiteCRM/SuiteCRM/pull/10501[PR #10501] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10499[#10499]: Error when importing in the Locations module
+* https://github.com/SuiteCRM/SuiteCRM/pull/10832[PR #10832] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9788[#9788]: Database failures in subpanels
+* https://github.com/SuiteCRM/SuiteCRM/pull/10831[PR #10831] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10830[#10830]: Primary email doesn't update when importing
+* https://github.com/SuiteCRM/SuiteCRM/pull/10856[PR #10856] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10646[#10646]: Fix Module builder label creation
+* https://github.com/SuiteCRM/SuiteCRM/pull/10838[PR #10838] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10594[#10594]: Bad relationship definitions filling the suitecrm logs
+* https://github.com/SuiteCRM/SuiteCRM/pull/10826[PR #10826] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10825[#10825]: Truncated value when saving large values in workflow and report conditions
+* https://github.com/SuiteCRM/SuiteCRM/pull/10870[PR #10870] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10023[#10023]: Email Folders Don't Select
+* https://github.com/SuiteCRM/SuiteCRM/pull/10875[PR #10875] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10874[#10874]: 'Associated user' field in OAuth Clients and Tokens lists does not link correctly
+* https://github.com/SuiteCRM/SuiteCRM/pull/10869[PR #10869] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10763[#10763]: SMTP credentials wrong after changing a field in outbound email settings
+* https://github.com/SuiteCRM/SuiteCRM/pull/10860[PR #10860] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10859[#10859]: Auth window loses connection to the opener when requesting an OAuth token
+* Fix https://github.com/SuiteCRM/SuiteCRM/issues/3855[#3855] - Update PDF Template Samples
+* Fix https://github.com/SuiteCRM/SuiteCRM/issues/7687[#7687] - update sample pdf loader to ignore invalid files
+* Fix issue in Email automatic import scheduler where Emails from certain timezones were not importing correctly.
+** Mostly affected Emails where the difference in timezone made the original Email fall on a different day
+
+==== icon:level-up-alt[] Upgrade Process Improvements
+
+We have added support for pre-upgrade migrations. This allows to have migrations (for example, to update data or configuration) run before the upgrade process begins.
+
+==== icon:code[] Developer Improvements
+
+* *Backend Record Validators* — A new extension point that allows developers to add custom validation logic before record save operations. Validators can block saves by throwing exceptions, enabling enforcement of business rules and access restrictions at the API level. See: link:../../../developer/extensions/backend/record-validators/[Backend Record Validators]
+
+* *Record-Level Async Validators* — A new metadata-driven system for running server-side validation when a record is saved. Async validators can display confirmation modals, list modals, or block the save entirely based on backend logic. See: link:../../../developer/metadata/record-view-metadata/record-async-validators/[Record-Level Async Validators]
+
+* *Confirmation List Modal* — A new modal type that displays a searchable, paginated table of records inside a dialog. Used when a backend process needs to show the user a list of related records and let them decide whether to proceed or cancel. See: link:../../../developer/extensions/frontend/containers/confirmation-modal/confirmation-list-modal/[Confirmation List Modal]
+
+* *Record Logic* — New record-level logic rules in view metadata. Record Logic can update multiple fields at once based on cross-field conditions, autofill fields from related records, or trigger backend calculations. See: link:../../../developer/extensions/frontend/logic/record-logic/[Adding Custom Record Logic]
+
+==== icon:book[] Documentation Updates
+
+* *Customizing View Metadata* — A new guide covering the full metadata extension pipeline, including all four mapper types (Vardef Config Mappers, Field Definition Mappers, View Config Mappers, and View Definition Mappers), with a pipeline diagram, comparison table, and examples for each approach. See: link:../../../developer/metadata/customizing-metadata/[Customizing View Metadata]
+
+* *Confirmation Modals* — New documentation covering both the standard Confirmation Modal and the Confirmation List Modal. See: link:../../../developer/extensions/frontend/containers/confirmation-modal/[Confirmation Modals]
+
+* *YAML Language Labels* — Extensions can now define language labels using YAML files, as an alternative to PHP language files. Supports application strings, list strings, and module strings. See: link:../../../developer/extensions/backend/languages/[Adding Language Labels via YAML]
+
+=== icon:heart[] Community
+
+SuiteCRM is built with and for its community — thank you to everyone who reported issues, submitted feedback, and contributed code to this release.
+
+_Special thanks to the following contributors for their contributions to this release:_
+
+{{% ghcontributors BastianHammer SinergiaCRM timo-ecm2 pstevens71 rpeshnegi ctucker1984 communig8-public pgorod hjdeheer kingfisher77 ramezquitao likhobory LoLei dtosun61 %}}
+
+_Special thanks to everyone who reported the security issues addressed in this release!_
+
+{{% ghcontributors MichaelPasternak1337 tuannm-1876 morimori-dev larlarua mosaa404 TristanInSec EntroVyx AdrianJunge ashrexon tunelko leduckhuong radoi-teodor furkan1x337 geo-chen amwhoi voraci0us usmonkhudoyorov adilkhan7546 TA-MU-TA prakhar0x01 Shaon-Xis wooseokdotkim tikket1 isch1zo f3nrir77%}} Nagarajan Selvaraj Paulmony
+
+Visit https://suitecrm.com/releases/[Releases] for the appropriate upgrade package for your installation.
+
+* *Found a Bug?* https://github.com/suitecrm/SuiteCRM-Core/issues[Submit an Issue]
+* *Want to contribute?* https://github.com/suitecrm/SuiteCRM-Core/pulls[Open a Pull Request]
+* *Translations:* https://crowdin.com/project/suitecrmtranslations[Join us on Crowdin]
+
+To report a security issue, please follow our link:../../../../community/security-policy[Security Policy].
+
+'''
+
+== 8.10.1
+
+_Released 13th May 2026_
+
+This maintenance release resolves three regressions introduced in 8.10. It contains no new features. We recommend all SuiteCRM 8.10 users upgrade promptly.
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.10.1[GitHub — Download v8.10.1]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+
+===  icon:check[] Release Notes
+
+==== icon:bug[] Bug Fixes
+
+===== Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/928[#928]: Core Fields Showing as Missing or Blank After Studio Edit
+
+When editing a standard core field through Studio (for example, marking a field as required or updating a label), SuiteCRM 8.10 was incorrectly injecting a `source: custom_fields` definition into the generated override file. This caused the system to look for the field in the wrong database table, resulting in SQL errors on save, data appearing blank or missing, and failures in logic hooks or integrations that depend on those fields.
+
+8.10.1 corrects the override generation logic. Studio will now produce clean override files that correctly preserve the status of core fields.
+
+*Are you affected?* You are affected if you upgraded to 8.10 and used Studio to edit any standard core field afterwards — for example, changing a label, marking a field as required, or adjusting display properties.
+
+*If you cannot update right away, or you have already made Studio edits to core fields*, you can resolve this manually:
+
+. Locate the affected file at: `public/legacy/custom/Extension/modules/<Module>/Ext/Vardefs/_override_sugarfield_<field>.php`
+. Open the file and delete the line that sets `source` to `custom_fields`
+. Go to *Administration → Repair* and run a *Quick Repair and Rebuild*
+. If SQL scripts appear at the bottom of the Repair page, run them to resync the metadata
+
+We recommend avoiding further core field edits via Studio on production environments until you have applied the 8.10.1 update.
+
+===== Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/926[#926]: Currency Symbols Not Displaying in Contract PDFs
+
+After upgrading to 8.10, currency variables in PDF templates stopped resolving to their actual values. Instead of displaying the expected currency symbol, documents were showing the raw variable names. This has been fixed and PDFs will once again display currency symbols as expected.
+
+===== Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/927[#927]: Generated PDFs Downloading with Template Name Instead of Record Name
+
+Before 8.10, generated PDFs for Invoices, Quotes and Contracts were named after the source record (e.g. `Invoice_InvoiceName.pdf`). With the 8.10 upgrade, filenames changed to reflect the PDF template name instead (e.g. `PDF_TemplateName.pdf`). 8.10.1 restores the original behaviour, where  Invoices, Quotes and Contracts PDF will be named after the source record (e.g. `Invoice_InvoiceName.pdf`).
+
+=== icon:heart[] Community
+
+SuiteCRM is built with and for its community — thank you to everyone who reported issues, submitted feedback, and contributed code to this release.
+
+_Special thanks to the following contributors for their contributions to this release:_
+
+{{% ghcontributors BastianHammer restena-sw %}}
+
+Visit https://suitecrm.com/releases/[Releases] for the appropriate upgrade package for your installation.
+
+* *Found a Bug?* https://github.com/suitecrm/SuiteCRM-Core/issues[Submit an Issue]
+* *Want to contribute?* https://github.com/suitecrm/SuiteCRM-Core/pulls[Open a Pull Request]
+* *Translations:* https://crowdin.com/project/suitecrmtranslations[Join us on Crowdin]
+
+To report a security issue, please follow our link:../../../../community/security-policy[Security Policy].
+
+'''
+
+== 8.10.0
+
+_Released: 30th April 2026_
+
+SuiteCRM 8.10 is one of our most significant releases to date. It brings the Documents and Notes modules fully into the SuiteCRM 8 UI, introduces the long-awaited Image Field, lays the groundwork for large-scale async background processing, and delivers a substantially improved email compose experience. This release also merges SuiteCRM 7.15, bringing PHP 8.4 support and advanced calendar sync.
+
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.10.0[GitHub — Download v8.10.0]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+
+'''
+
+== icon:star[] What's New
+
+=== icon:image[] Image Field
+
+You can now upload and display images directly within any module — making it ideal for product photos, profile pictures, logos, and other visual assets. Image fields can be added via Studio in the Admin panel, just like any other field type, with configuration options for storage type, display dimensions, and preview behaviour.
+
+In List Views and Subpanels, SuiteCRM automatically generates thumbnails and lazy loads images to keep performance in check at scale. Both the thumbnail dimensions and the lazy loading behaviour are configurable via `config_override.php`.
+
+image:image-field-example.png[Image Field Example]
+
+*Documentation:* link:../../module-management/field-types/image[Image Field]
+
+'''
+
+=== icon:envelope[] Email Compose Improvements
+
+Writing emails in SuiteCRM previously meant working within a constrained modal with limited formatting space and no way to attach documents without leaving the compose window. SuiteCRM 8.10 addresses all of this:
+
+* *Maximise* — The compose modal can now be expanded to full screen, giving you the space you need for longer messages.
+* *Attachments* — Documents can be attached directly from within the compose window, without switching context.
+* *Variable Injector* — Dynamic content (such as recipient name or account details) can be inserted inline using the new Variable Injector button.
+* *Draft Management* — Full draft support is now included. Drafts are saved automatically and can be managed, resumed, or discarded from a dedicated Drafts area.
+
+*Documentation:* link:../../../user/daily-activities/emails/email-compose/[Composing an Email] · link:../../../user/daily-activities/managing-drafts/[Managing Drafts]
+
+'''
+
+=== icon:bullhorn[] Campaign Error Handling
+
+Campaigns that hit SMTP errors or exceeded error thresholds previously continued sending silently, making it difficult to detect and respond to broken outbound configurations. SuiteCRM 8.10 introduces automatic pause-and-resume behaviour:
+
+* *Paused Status* — An Email Marketing Record is automatically paused when the error threshold per batch is reached, or when the selected Outbound Email account cannot connect to SMTP. Both queueing and sending stop while paused.
+* *Warning Banner* — A banner is displayed on the record showing the most recent error that triggered the pause.
+* *Resume Action* — Use the new Resume action to continue from where the campaign left off, without re-sending to already-processed recipients.
+
+Two new configuration options are also available:
+
+[cols="1,2", options="header"]
+|===
+| Option | Description
+| Maximum send retries per recipient on failure | How many times SuiteCRM retries a failed send before marking the recipient as permanently failed.
+| Error threshold per batch | Maximum errors allowed in a single batch before the record is auto-paused. Set to `0` to disable auto-pausing.
+|===
+
+*Documentation:* link:../../../user/modules/_campaigns/[Campaigns]
+
+'''
+
+=== icon:file-alt[] Documents & Notes — Now on SuiteCRM 8 UI
+
+Both the Documents and Notes modules have been fully migrated to the SuiteCRM 8 interface, replacing the legacy views with consistent, modern patterns.
+
+==== Documents
+
+* *File Field* — File attachments now use the new File field type, with malware scanning support if configured.
+* *Storage Type* — Documents and Document Revisions both default to `private-documents` storage. Both fields must use the same storage type — changing only one is not supported.
+* *Document Revisions Widget* — A new table widget replaces the previous subpanel. From it you can add new revisions, download files by clicking the filename, and delete revisions using the trash icon. Note that the active revision cannot be deleted until a newer revision exists.
+
+==== Notes
+
+Notes now use the new File field type for attachments, following the same SuiteCRM 8 view patterns as the rest of the application.
+
+*Documentation:* link:../../../user/sales-relationships/document-management/[Documents] · link:../../../user/daily-activities/notes-attachments[Notes]
+
+'''
+
+=== icon:file-pdf[] PDF Generation
+
+PDF generation has been updated on several key modules to use the SuiteCRM 8 entrypoint and compose modal.
+
+* *Print as PDF* — Available from the action menu within the record view for Accounts, Quotes, Invoices, Contracts, Contacts, and Leads. Select a template, and the PDF is generated and downloaded automatically. A Note record is also created with the PDF attached.
+* *Email PDF* — For Quotes, Invoices, and Contracts, an Email PDF option opens a pre-composed email with the PDF already attached and content populated from the record.
+* *Bulk PDF Generation* — Select multiple records from the list view, then use Print as PDF from the bulk action menu to generate a single merged PDF. A Note is created for each selected record with its respective PDF attached.
+
+*Documentation:* link:../../../user/sales-relationships/pdf-templates/[PDF Templates]
+
+'''
+
+=== icon:file[] File Field — Now Available in Studio
+
+File Fields can now be added to any module directly through Studio, without custom development. If malware scanning is configured on your instance, file uploads through the File field will be scanned automatically.
+
+*Documentation:* link:../../module-management/field-types/file/[File Field]
+
+'''
+
+== icon:cogs[] Administrator Notes
+
+=== icon:tasks[] Async Tasks & Manual Migration Tasks
+
+SuiteCRM 8.10 introduces *Async Tasks* — a new type of background job designed to process large volumes of data without blocking the application or overloading the server. Tasks are queued and processed by a background worker, and progress is tracked in real time.
+
+{{% notice warning %}}
+*Action Required* — SuiteCRM 8.10 introduces a new background worker that *must* be configured for async tasks (including Manual Migration Tasks) to function. Without a running worker, these tasks will remain in *Pending* status indefinitely.
+{{% /notice %}}
+
+See the link:../../async-tasks/messenger-setup/[Messenger Setup guide] for full instructions on how to configure the worker.
+
+==== Manual Migration Tasks
+
+*Manual Migration Tasks* are a specialised type of Async Task for handling complex data migrations. They run in the background so you can continue using SuiteCRM normally while a migration is in progress.
+
+Navigate to *Administration Panel → Admin Tools → Migrations* to access them.
+
+Key behaviours:
+
+* Tasks are added automatically after an upgrade, but can also be created manually.
+* Data is processed in small batches to avoid server overload.
+* Progress is tracked in real time: items processed, succeeded, and failed.
+* Failed items can be retried individually or the entire task can be re-run.
+
+The following migration tasks are included with the upgrade to 8.10:
+
+.Photo & File Migrations
+* Migrate Lead Photos
+* Migrate Contact Photos
+* Migrate Prospect Photos
+* Migrate Document Revision Files
+* Migrate Notes Attachments
+
+.Calendar Migrations _(added only if not previously migrated)_
+* Migrate Legacy Google Calendar Meetings
+* Migrate Legacy Google Calendar Users
+
+==== Configuration
+
+The default transport uses your existing database (Doctrine) and works without any additional infrastructure. If you process high volumes of data, RabbitMQ (AMQP) and Redis are also supported.
+
+Key configuration areas in `.env.local`:
+
+[cols="1,2", options="header"]
+|===
+| Setting | Purpose
+| `MESSENGER_INTERNAL_ASYNC_TRANSPORT_DSN` | Primary transport (default: Doctrine)
+| `MESSENGER_INTERNAL_FAILURE_TRANSPORT_DSN` | Where failed messages are sent
+| `MESSENGER_LOG_LEVEL` | Log verbosity (default: `error`)
+| `MESSENGER_LOG_FILE_NAME` | Optional custom log file
+| `ASYNC_TASK_ROUTES` | Route specific tasks to specific transports
+|===
+
+Batch sizes are controlled in `config_override.php`:
+
+* `max_migration_items_to_queue_per_run` (default: `50`)
+* `max_migration_items_to_process_per_run` (default: `20`)
+
+*Documentation:* link:../../async-tasks/[Async Tasks] · link:../../../developer/extensions/backend/async-tasks/[Developer Guide: Async Tasks] · link:../../async-tasks/manual-migration-tasks/[Manual Migrations]
+
+'''
+
+=== icon:folder[] Media Upload Directory Changes
+
+The media upload directory structure has been updated for consistency. If you have custom code or integrations that reference these paths directly, they will need to be updated.
+
+[cols="1,1", options="header"]
+|===
+| Before | After
+| `public/media-upload` | `public/media`
+| Top-level directory: `uploads` | Top-level directory: `media`
+| Private media endpoint: `media` | Private media endpoint: `private/media`
+|===
+
+On upgrade, existing files are migrated to the new directories automatically.
+
+'''
+
+=== icon:database[] Legacy File Storage — Backwards Compatibility
+
+Upon upgrading to 8.10, existing file attachments for Contacts, Leads, Prospects/Targets, Document Revisions, and Notes stored in the legacy file storage system can be migrated via the Manual Migration Tasks described above.
+
+As a fallback, backwards compatibility support has been added for legacy files — existing file fields using the old storage system are auto-detected and continue to display correctly without any manual intervention.
+
+'''
+
+=== icon:wrench[] Configuration Changes
+
+A new `TEMPORARY_FILE_BASE_DIR` option has been added to `.env` to control where temporary files are stored during upload and processing. The default value is `tmp`.
+
+'''
+
+== icon:code[] Developer Improvements
+
+=== Record Thread
+
+A new click action system has been added for record thread items, firing on row click rather than requiring a dedicated button.
+
+* *Base class:* `RecordThreadItemClickActionHandler` — implement `run()`, `shouldDisplay()`, and `checkRecordAccess()`
+* *Config:* `RecordThreadItemClickActionConfig` — accepts `key`, `asyncProcess?`, `params?`, `activeOnFields?`, `modes?`, `acl?`, and `default?`
+* `RecordThreadConfig` now accepts `clickActions?: RecordThreadItemClickActionConfig[]`
+
+'''
+
+=== Buttons
+
+New properties on `ButtonInterface`:
+
+* *dynamicEndIcon* — reactive end icon
+* *endIconTitleKey*, *endIconKlass*, *endIcon* — static end icon configuration
+* *dynamicLabelKlass* — dynamic label class
+
+=== Widgets
+
+* *hideIfLoading* — hides a widget row while the statistic is loading
+* *dynamicLabelTooltip* — enables a tooltip on a dynamic label in a widget row
+
+=== Fields
+
+* *emptyDynamicLabelKey* — alternate label key displayed when the field has no value
+* *hideIfEmpty* — display logic shorthand
+
+==== Link Actions
+
+A new `linkActions` array in a field's viewdef controls how clicking a field value navigates or triggers an action.
+
+* *Base class:* `LinkActionHandler` — implement `isRouterLink()` and `getLink()`
+* *Manager:* `LinkActionManager` — holds an actions map per mode
+* *Built-in actions:*
+** `default` — existing navigation behaviour
+** `async-process` — fires a backend process on click
+** `record-link` — navigates to a record using `params.moduleField` and `params.recordField`
+
+'''
+
+=== Async Action Response Handlers
+
+* *emit-event* (`EmitEventAsyncAction`) — reads `data.event` and emits on `AppStateStore.eventEmitterMapper`
+* *record-thread-modal* (`RecordThreadModalAsyncAction`) — opens a record-thread-modal popup from a backend process response
+
+=== List Actions
+
+* *modal-create* (`ModalCreateLineAction`, mode: `list`) — opens a `RecordModalComponent` to create a related record inline without leaving the list view
+
+'''
+
+=== Record Modal
+
+Three new action zones, each with its own manager and abstract handler:
+
+[cols="1,2", options="header"]
+|===
+| *Zone* | *Purpose*
+| *Header: `RecordModalHeaderActionHandler`* | Actions placed in the modal header, next to the title
+| *Footer: `RecordModalFooterActionHandler`* | Actions placed in the modal footer, next to the buttons
+| *Record: `RecordModalRecordActionHandler`* | Actions targeting the current record
+|===
+
+=== Operators
+
+Four new operators are available:
+
+[cols="1,2", options="header"]
+|===
+| *Operator* | *Behaviour*
+| *is-true* | Compares against `true`, `"true"`, `1`, and `"1"`
+| *is-false* | Compares against `false`, `"false"`, `0`, and `"0"`
+| *previous-value-equal* | Compares a field against its previous value
+| *previous-value-not-equal* | Inverse of `previous-value-equal`
+|===
+
+*Documentation:* link:../../../developer/extensions/frontend/logic/operators/[Operators]
+
+'''
+
+=== New Version Command
+
+A new console command is available to check the currently installed SuiteCRM version:
+
+[source,bash]
+----
+./bin/console suitecrm:version
+----
+
+'''
+
+== icon:code-branch[] 7.15 Merged into 8.10
+
+SuiteCRM 7.15 has been merged into the 8.10 release. Key features it brings include:
+
+* *PHP 8.4 support*
+* *Advanced Calendar Integration & Sync*
+* *Survey Styling Improvements*
+* *Updated Automatic Email Import*
+* *V8 API: OAuth Auth Code Grant*
+
+For the full list of changes from 7.15, see the link:../../../../../admin/releases/7.15.x/#_7_15_0[7.15 Release Notes].
+
+'''
+
+== icon:bug[] Bug Fixes
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/918[PR #918] — Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/868[#868]: Campaigns incorrectly set to sent status
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/912[PR #912] — Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/902[#902]: Multi-select not selecting correctly
+* https://github.com/SuiteCRM/SuiteCRM-Core/pull/916[PR #916] — Restore & deprecate function in Bugs module
+* https://github.com/SuiteCRM/SuiteCRM/pull/9773[PR #9773] — Fix https://github.com/SuiteCRM/SuiteCRM/issues/9772[#9772]: Importing text emails with attachments
+* https://github.com/SuiteCRM/SuiteCRM/pull/10807[PR #10807] — Fix https://github.com/SuiteCRM/SuiteCRM/issues/10804[#10804]: CalendarSync sync-back now preserves external fields (Google PATCH + CalDAV RMW)
+
+'''
+
+== icon:heart[] Community
+
+SuiteCRM is built with and for its community — thank you to everyone who reported issues, submitted feedback, and contributed code to this release.
+
+_Special thanks to the following contributors for their contributions to this release:_
+
+{{% ghcontributors abuzarfaris kingfisher77 %}}
+
+Visit https://suitecrm.com/releases/[Releases] for the appropriate upgrade package for your installation.
+
+* *Found a Bug?* https://github.com/suitecrm/SuiteCRM-Core/issues[Submit an Issue]
+* *Want to contribute?* https://github.com/suitecrm/SuiteCRM-Core/pulls[Open a Pull Request]
+* *Translations:* https://crowdin.com/project/suitecrmtranslations[Join us on Crowdin]
+
+To report a security issue, please follow our link:../../../../community/security-policy[Security Policy].
+
+'''
+_For professional support and enterprise services, visit https://suitecrm.com/enterprise/support-services/[SuiteCRM Ltd Support Services]._

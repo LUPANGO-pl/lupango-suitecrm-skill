@@ -1,0 +1,17 @@
+{
+  "name": "suitecrm-expert-skill",
+  "version": "2.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node tooling/package.mjs build",
+    "validate": "node tooling/package.mjs validate",
+    "test": "node tooling/run-tests.mjs",
+    "search": "node runtime/search-docs.mjs",
+    "benchmark": "node tooling/benchmark.mjs",
+    "docs:check": "node tooling/check-corpus.mjs"
+  }
+}

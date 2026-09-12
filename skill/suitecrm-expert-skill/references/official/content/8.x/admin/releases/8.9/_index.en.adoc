@@ -1,0 +1,476 @@
+---
+title: "8.9 Releases"
+weight: 9790
+aliases:
+  - /8.x/admin/releases/8.9/
+---
+
+:toc:
+:toc-title:
+:toclevels: 1
+:icons: font
+:imagesdir: /images/en/8.x/admin/release
+
+== 8.9.3
+
+_Released 19th March 2026_
+
+=== icon:box-open[] Assets
+
+* https://github.com/suitecrm/SuiteCRM-Core/releases/tag/v8.9.3[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.7.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:lock[] Security
+
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29108[CVE-2026-29108: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM-Core/security/advisories/GHSA-xc8w-xc9v-45w5[GitHub Advisory] | Reporter: JBince
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29109[CVE-2026-29109: RCE Vulnerability] | https://github.com/SuiteCRM/SuiteCRM-Core/security/advisories/GHSA-mhq2-277m-6w24[GitHub Advisory] | Reporter: Ravindu Wickramasinghe (rvz)
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-32697[CVE-2026-32697: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM-Core/security/advisories/GHSA-9p9g-224x-6rmm[GitHub Advisory] | Reporter: lighthousekeeper1212
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29189[CVE-2026-29189: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-m6x8-3hxp-qxwv[GitHub Advisory] | Reporter: lighthousekeeper1212
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29098[CVE-2026-29098: Path Traversal Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-6858-fhw5-56gf[GitHub Advisory] | Reporter: JBince
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29099[CVE-2026-29099: SQL Injection Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-38rf-h37x-7767[GitHub Advisory] | Reporter: JBince
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29102[CVE-2026-29102: RCE Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-mr5v-wcgr-98qr[GitHub Advisory] | Reporter: Reuben Seah
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29101[CVE-2026-29101: Path Traversal Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-24pf-9cvh-ppcg[GitHub Advisory] | Reporter: Reuben Seah
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29105[CVE-2026-29105: Open Redirect Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-9crg-83cg-wv74[GitHub Advisory] | Reporter: d3dn0v4
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29104[CVE-2026-29104: Authenticated Arbitrary File Upload Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-5hx9-cmmx-26p3[GitHub Advisory] | Reporter: d3dn0v4
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29106[CVE-2026-29106: XSS Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-7qrj-5hj6-7c2m[GitHub Advisory] | Reporter: Suphawith Phusanbai
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29107[CVE-2026-29107: Authenticated SSRF Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-g7cv-4ghj-x98h[GitHub Advisory] | Reporter: Parnuski
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29097[CVE-2026-29097: SSRF and Dos Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-x3p2-qcqh-qx2m[GitHub Advisory] | Reporter: Ravindu Wickramasinghe (rvz)
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29103[CVE-2026-29103: RCE Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-5jjq-9qch-9rg7[GitHub Advisory] | Reporter: DQH1
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2026-29096[CVE-2026-29096: SQL Injection Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-vh42-gmqm-q55m[GitHub Advisory] | Reporter: q1uf3ng
+
+==== icon:bug[] Bug Fixes
+
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/887[887] - Fix Import Links going to incorrect view
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/888[888] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/749[#749] - Upgrade doesn't delete old htaccess file, which prevents product images from showing up
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/881[881] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/797[#797] - Default editor type to TinyMCE and validate preferences
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/880[880] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/711[#711] - Ensure recursive directory creation in installer
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/879[879] - Update Dependencies
+
+=== icon:heart[] Community
+
+We would love to have your feedback and input to help make SuiteCRM 8 great for everyone.
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors BastianHammer %}}
+
+_Special thanks to everyone who reported the security issues addressed in this release!_
+
+{{% ghcontributors JBince rvizx lighthousekeeper1212 quirmz d3dn0v4 yamerooo123 Parnuski DQH1 q1uf3ng %}}
+
+If you have found an issue you think we should know about, or have suggestion/feedback, please link:https://github.com/suitecrm/SuiteCRM-Core/issues[Submit An Issue].
+
+If you want to get involved and submit a fix, fork the repo and when ready please link:https://github.com/suitecrm/SuiteCRM-Core/pulls[Submit A PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Please link:https://suitecrm.com/releases/[visit the official website] to find the appropriate upgrade package.
+
+To report any security issues please follow our link:../../../../community/security-policy[Security Policy]
+
+'''
+
+
+== 8.9.2
+
+_Released 13th January 2026_
+
+=== icon:box-open[] Assets
+
+* https://github.com/suitecrm/SuiteCRM-Core/releases/tag/v8.9.2[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.7.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:level-up-alt[] Yarn update
+
+**Minimum version update** - Yarn v4.10.3
+
+==== icon:bug[] Bug Fixes
+
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/818[818] - Fix #818 - Fix Various Attachment Styling Issues
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/817[817] - Fix #817 - Update Squire Composer package
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/816[816] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/810[#810] - Search Failing
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/815[815] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/797[#797] - Default Email Template Editor incorrect
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/814[814] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/800[#800] - Scheduler not handling all job types
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/819[819] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/707[#707] - Date filter in list views with today/yesterday/etc options
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/820[820] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/708[#708] https://github.com/SuiteCRM/SuiteCRM-Core/issues/637[#637] - Date field default value not working
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/826[826] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/799[#799] - New file fields 'uploads' directory gets deleted during upgrade
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/827[827] - Fix #827 - Fix Campaigns when no access to Email Marketing
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/828[828] - Fix #828 - Update Listview Loading so mass update values take effect
+
+=== icon:heart[] Community
+
+We would love to have your feedback and input to help make SuiteCRM 8 great for everyone.
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors BastianHammer GoryMoon markbond1007 %}}
+
+If you have found an issue you think we should know about, or have suggestion/feedback, please link:https://github.com/suitecrm/SuiteCRM-Core/issues[Submit An Issue].
+
+If you want to get involved and submit a fix, fork the repo and when ready please link:https://github.com/suitecrm/SuiteCRM-Core/pulls[Submit A PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Please link:https://suitecrm.com/releases/[visit the official website] to find the appropriate upgrade package.
+
+To report any security issues please follow our link:../../../../community/security-policy[Security Policy]
+
+'''
+
+== 8.9.1
+
+_Released 6 November 2025_
+
+=== icon:box-open[] Assets
+
+* https://github.com/suitecrm/SuiteCRM-Core/releases/tag/v8.9.1[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.7.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:book[] Documentation
+
+Documentation has been added/updated for:
+
+* link:../../../developer/metadata/fields/field-options/async-validator/[Async Validators]
+** Display confirmation on async validator documentation added
+* link:../../administration-panel/schedulers[Schedulers]
+** Setup schedulers widget documentation added
+* link:../../../developer/metadata/fields/field-types/attachment/[Attachment Field Type]
+** Default values description added for configuration options
+
+==== icon:lock[] Security
+
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-64488[CVE-2025-64488: SQL Injection Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-5v53-v44q-ww2c[GitHub Advisory] | Reporter: allannjuguna
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-64489[CVE-2025-64489: Privilege Escalation Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-j6jg-9jj3-q2ph[GitHub Advisory] | Reporter: prakhar0x01
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-64490[CVE-2025-64490: Improper Access Control] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-jh8v-wqgj-hhc2[GitHub Advisory] | Reporter: prakhar0x01
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-64491[CVE-2025-64491: XSS Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-prfm-6667-x3mv[GitHub Advisory] | Reporter: Nicolas Decayeux (Patrowl)
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-64492[CVE-2025-64492: SQL Injection Vulnerability] | https://github.com/SuiteCRM/SuiteCRM-Core/security/advisories/GHSA-54m4-4p54-j8hp[GitHub Advisory] | Reporter: Robert Torosyan
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-64493[CVE-2025-64493: SQL Injection Vulnerability] | https://github.com/SuiteCRM/SuiteCRM-Core/security/advisories/GHSA-5gcj-mfqq-v8f7[GitHub Advisory] | Reporter: Paul (dibits.de)
+
+==== icon:bug[] Bug Fixes
+
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/728[728] - Fix #728 - Fix attachment alignment on Mobile
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/727[727] - Fix #727 - Fix New Users not shown wizard
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/725[725] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/720[#720] - error when executing the scheduler with a campaign to be triggered
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/732[732] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/600[#600] - untranslated messages in timeline and charts
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/733[733] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/724[#724] - Non admins unable to see filter save button
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/735[735] - Fix #735 - Update Schedulers Listview to Suite 8 view
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/736[736] - Fix #736 - Fix https redirect proxy issue
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/742[742] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/729[#729] - Bulk Delete failing
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/743[743] - Fix #743 - Fix selection on listview
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/744[744] - Fix #744 - Fix email line action showing incorrectly on some modules
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/745[745] - Fix #745 - Add support for confirmation modals on async validation
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/710[710] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/709[709] -  Fix issue with space characters being deleted
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/754[754] - Fix #754 - Add default order by on listview
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/750[750] - Fix #750 - Fix Relate Field issues on filter
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/757[757] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/739[#739] - Add Trackers Enabled Retrieve Api Mapper
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/758[758] - Fix #758 - Fix User preferences being reset on security group update
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/761[761] - Fix #761 - Update async validator data
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/753[753] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/652[#652] - datetime formatting on dst, Add Meridian to Popup Datetime
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/762[762] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/746[#746] - Remove failed two factor label after successful code
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/763[763] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/741[#741] Hardcoded labels in the Email Marketing Diagnostics / Charts
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/764[764] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/719[#719] - Allowed cron user won't be automatically generated for config.php during 8.9 installation
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/766[766] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/751[#751] - When adding a role (with restricted permissions) to a user, no modules are visible anymore
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/767[767] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/755[#755] - field actions not showing correctly
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/768[768] - Fix #768 - Fix Campaign Chart counter not showing correct clicks and opt out.
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/645[645] - Fix #645 - Fix variable name typo in NavbarHandler.php
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/561[561] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/560[#560] - removed equality check between fieldKey and name in return condition of addFieldDepedency() to allow addition of the field itself as a dependency
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/770[770] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/722[#722] - File attachment display should wrap into multiple lines
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/772[772] - Fix #772 - campaign trackers admin config on fresh install
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/771[771] - Fix #771 - Use date component in datetime filter mode
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/748[748] - Fix #748 - Replace return 0 with Symfony Command Constants
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/773[773] - Fix #773 - Fix attachment re-upload
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/778[778] - Fix #778 - Fix incorrect label on Campaign Charts
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/777[777] - Fix #777 - Fix Sidebar Widget Rendering
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/776[776] - Fix #776 - Fix issue of email compose not showing correctly
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/782[782] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/781[#781] - Fix intermittent with save button not appearing
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/780[780] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/779[#779] - Fix issue with date due in tasks not displaying
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/785[785] - Fix #785 - Fix attachment popover showing incorrectly on resize
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/786[786] - Fix #786 - Fix composite fields display on filter
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/784[784] - Fix #784 - Update in_queue_date to use current DateTime format
+
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10709[10709] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10708[#10708] - Converting Quote to Invoice ignores field defaults
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10713[10713] - Fix #10713 - Fix edit link (pencil) in Global Search
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10714[10714] - Fix #10714 - Fix multienum fields in dashlet filters
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10716[10716] - Fix #10716 - Fix Inline Edit for decimal fields
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10725[10725] - Fix #10725 - Set Email Warning Notification to false
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10571[10571] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10570[#10570] - Email Signature Compose View Issues
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10727[10727] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10726[#10726] - Search Pagination and Module Filter
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10733[10733] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10732[#10732] - Can't list view inbound email inboxes after soft-deleting a user with an active email inbox
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10736[10736] - Fix #10736 - Fix Workflow modify record date issue
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10723[10723] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10722[#10722] - Set date_entered after save update
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10734[10734] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10724[#10724] - Email Subject not importing correctly
+
+=== icon:heart[] Community
+
+We would love to have your feedback and input to help make SuiteCRM 8 great for everyone.
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors QuickCRM BastianHammer wildbuzz666 Dmbob likhobory nyupyu apx-gobido  xkrdudrlf LoLei scicali TheGarious %}}
+
+_Special thanks to everyone who reported the security issues addressed in this release!_
+
+{{% ghcontributors  allannjuguna prakhar0x01 paul1278 qhoko Infikus %}}
+
+If you have found an issue you think we should know about, or have suggestion/feedback, please link:https://github.com/suitecrm/SuiteCRM-Core/issues[Submit An Issue].
+
+If you want to get involved and submit a fix, fork the repo and when ready please link:https://github.com/suitecrm/SuiteCRM-Core/pulls[Submit A PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Please link:https://suitecrm.com/releases/[visit the official website] to find the appropriate upgrade package.
+
+To report any security issues please follow our link:../../../../community/security-policy[Security Policy]
+
+'''
+
+== 8.9.0
+
+_Released 17 September 2025_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.9.0[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+
+===  icon:check[] Release Notes
+
+==== icon:email[] Upgrade/Migration Notes - Campaigns & Email Marketing
+
+When upgrading or migrating to SuiteCRM 8.9 from a previous version, Email Marketing Records will be updated as follows:
+
+* Records with status `inactive` will be changed to `draft` (the equivalent status in SuiteCRM 8).
+* A new field `type` will be set to `Legacy` to distinguish migrated records from those created in SuiteCRM 8.
+* Two new fields will be added:
+** `Status` — set to `Sent`
+** `Queueing Status` — set to `Finished`
+
+==== icon:level-up-alt[] Setup Changes
+
+===== New Schedulers entrypoint
+
+A new entrypoint for running schedulers is available as a Symfony command. You can execute it via CLI or set it up as a cron job:
+
+----
+php bin/console schedulers:run
+----
+
+To see more information about Schedulers, and setting up the new configuration see link:../../administration-panel/schedulers[here.]
+
+ℹ️ This new entrypoint replaces the legacy cron and needs to be enabled in order to run new symfony side schedulers.
+
+==== icon:book[] Documentation
+
+With all the new changes in SuiteCRM 8.9 comes a lot of more documentation!
+
+Documentation has been added for:
+
+* *Features:*
+** link:../../../user/modules/_campaigns/[Campaigns]
+* *Setup:*
+** link:../../administration-panel/schedulers[Schedulers]
+* *File Storage:*
+** link:../../configuration/file-storage/file-storage-configuration[File Storage Configuration Reference]
+** link:../../configuration/file-storage/aws-how-to-guide[How to configure AWS S3 Storage]
+** link:../../configuration/file-storage/azure-how-to-guide[How to configure Azure Blob Storage]
+** link:../../configuration/file-storage/media-object-lifecycle[Lifecycle of Media Objects]
+* *Field Options:*
+** link:../../../developer/metadata/fields/field-options/async-validator[Async Validators option]
+** link:../../../developer/metadata/fields/field-options/init-default-process[Init Default Process option]
+** link:../../../developer/metadata/fields/field-options/footnotes[Footnotes option]
+** link:../../../developer/metadata/fields/field-options/filter[Filter option]
+* *Field types:*
+** link:../../../developer/metadata/fields/field-types/attachment[Attachment Field Type]
+** link:../../../developer/metadata/fields/field-types/file[File Field Type]
+** link:../../../developer/metadata/fields/field-types/multirelate[Multi Relate Field Type]
+* *Extensions:*
+** link:../../../developer/extensions/backend/fields/vardef-config-mapper/[Vardef Config Mapper]
+
+
+==== icon:star[] Enhancements
+
+===== icon:paint-brush[] Campaigns
+
+Campaigns and Email Marketing have been redesigned in SuiteCRM 8!
+
+This release introduces the first phase of the redesign, with more features to come in future releases.
+
+You can see more information about Campaigns link:../../../user/modules/_campaigns/[here.]
+
+image:8-9-campaigns-overview.gif[Campaigns Overview]
+
+===== icon:paint-brush[] Email Compose Redesign
+
+The Email Compose modal has been redesigned in SuiteCRM 8!
+
+This release introduces a brand new and redesigned compose modal that aims to provide a better user experience, including:
+
+* A configurable compose modal that can be collapsed and can remain open while navigating the app.
+* To, CC, and BCC fields that support searching and selecting from SuiteCRM Accounts, Contacts, Leads, Users, or individual email addresses using the new Multi-Flex-Relate field.
+* Attachments implemented using the new storage system.
+* Ability to insert an Email Template which, when sending, will parse the variables based on the selected Related To record.
+* The Body field now uses the lightweight Squire editor, offering consistent, rich text editing tailored for emails.
+* Email address links in Suite 8 views open a new compose modal pre-addressed to that contact.
+
+Even more is planned for the compose modal, the following releases will bring more features such as: saving drafts and attaching existing documents.
+
+image:Email-Compose.gif[Email Compose]
+
+
+
+===== icon:file[] New File and Attachment Field Types
+
+SuiteCRM 8.9 introduces two new field types for handling file uploads: `file` and `attachment`.
+
+**File type**
+
+* Designed for uploading files to a field. This field type is ideal for scenarios where only one file needs to be associated with a record, such as uploading a profile picture, a single contract, or a receipt. The uploaded file is stored using the new media storage system, supporting various backends like local storage, AWS S3, or Azure Blob Storage.
+* For more information see link:../../../developer/metadata/fields/field-types/file[File Field Type] documentation.
+
+**Attachment type**
+
+* Built for attaching multiple items to a record. Unlike the `file` field, the `attachment` field, by default, always allows users to associate several files at once. Additionally, in future releases we plan to add support not only for file uploads but also linking existing documents from the Documents module, and potentially other types of attachments. This will make it suitable for use cases like attaching supporting documents, reference materials, or related files to a record.
+* For more information see link:../../../developer/metadata/fields/field-types/attachment[Attachment Field Type] documentation.
+
+ℹ️ Documents and Notes do not yet use the new fields or the new storage system. The migration of these modules to SuiteCRM 8 version will be provided in a future release.
+
+image:notes-attachments-field-detail.png[Notes and Attachments Field Detail]
+
+===== icon:file[] New Media Storage System
+
+{{% notice note %}}
+This release does not yet include a migration path for old files stored in the legacy `upload` directory. A migration path will be provided in a future release.
+{{% /notice %}}
+
+These field types leverage the media uploader system, which allows files to be stored in various backends: local storage, AWS S3 or Azure Blob Storage.
+
+A new concept of "storage types" has been introduced to define different storage backends and locations for different use cases. Each storage type can be linked to a different storage system, e.g. it is possible to have `private_documents` pointing to Azure blobs while `private_images` points to AWS S3. This should give system admins flexibility in how and where files are stored.
+
+Currently, there are 5 storage types:
+
+* `private_documents` — stored in `uploads/documents`
+* `public_documents` — stored in `public/media-upload/documents`
+* `private_images` — stored in `uploads/images`
+* `public_images` — stored in `public/media-upload/images`
+* `archived_documents` — stored in `uploads/archived`
+
+To see more information about configuring external storage services, see link:../../configuration/file-storage[File Storage Configuration] documentation.
+
+
+
+===== Multi-Relate
+
+
+Multi-Relate fields have been added to SuiteCRM 8.
+
+You can now relate multiple associated records at once (see below). For more information see link:../../../developer/metadata/fields/field-types/multirelate/[Multi Relate] documentation.
+
+ℹ️ For the moment this field is not available in the Studio. A future release will include Studio support.
+
+image:Multi-Relate.gif[Multi Relate]
+
+==== icon:cog[] New Schedulers Added
+
+SuiteCRM 8.9 introduces 3 new schedulers:
+
+* **Queue Email Marketing** — Queues Email Marketing Records that are scheduled to be sent.
+* **Send Campaign Emails** — Sends the queued emails for Email Marketing Records.
+* **Clean Up Temporary Files** — Cleans up temporary files.
+* **Prune Database scheduler** — Prune Database scheduler has been moved to symfony side and now also removes media objects from the new storage system.
+
+===== icon:email[] Outbound Email Default
+
+You can now select a Default Outbound Email Account. This will be used as the pre-selected Outbound Account when composing a Campaign or Email.
+
+For newly created users, the first personal outbound created will automatically be set as their default. This can be updated via
+the "Actions" dropdown on the record.
+
+==== icon:bug[] Bug Fixes
+
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/662[662] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/540[#540] - Two tooltips are displayed for listview icons to log call, schedule meeting, create task, compose email
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/634[634] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/625[#625] - Opportunities list freeze when change Decimal Symbol and 1000s separator
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/635[635] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/584[#584] - Difficult to assign user to role when pagination is over top of buttons
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/636[636] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/575[#575] - Proceed button on installation page only submits user action when clicked outside of text
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/655[655] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/566[#566] - DisplayLogic of Panel is not working
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/417[417] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/274[#274], https://github.com/SuiteCRM/SuiteCRM-Core/issues/503[#503] - Call list shows Related to field incorrectly if containing letters with accents
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/704[704] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/607[#607] - Enable relate field value clearing
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/698[698] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/678[#678] - Enable checkbox filter retrieval in quick filters
+
+==== icon:code[] Developer improvements
+
+* *Fields:*
+** Four new field types have been introduced:
+*** File
+*** Attachment
+*** Multi-Relate
+*** Multi-Flex-Relate
+**** Only available on edit mode
+** The new HTML editor is now based on the Squire Editor.
+** Backend driven default value initialization - You can use `initDefaultProcess` to initialize field default values by calling the backend.
+** Backend driven Save Validators - Use `asyncValidators` in field definitions for custom asynchronous validation.
+** Relate and Multi-Relate fields:
+*** Relate fields now support confirmation modals.
+*** Relate fields can now search on empty with the flag `filterOnEmpty` on the vardef. This will search for results without inputting any values.
+*** Header and subheader fields can be added to relate fields.
+*** Preset criteria can be added to relate fields for searching.
+*** Criteria for relate fields can be added via the vardefs.
+** Field labels can now be hidden on record view by adding `'labelDisplay' => none` via the vardefs.
+** Toggle fields visibility via field actions using 'toggle-fields-visibility'.
+** Dynamic labels can be added to field labels.
+** Fields now support "footnotes" this can be added to the field via the definition. This supports "activeOn" Fields to hide/show conditionally.
+** You can now add a default mapper for fields using the `VardefConfigMapperInterface`.
+
+* *Record:*
+** You can now redirect to another module after deletion by adding the `redirectModule` inside the action `params`.
+** After creating a record from a parent record you can add the option to not redirect back to the parent record after creation with the `redirect => false` flag.
+** The back button on record view can now be hidden.
+** Navigation options can be configured for the back button.
+
+* *Grids and Widgets:*
+** Widgets can be filtered by mode or using the `activeOnFields` setting.
+** Added a new banner grid sidebar widget.
+** Added a new grid top widget.
+** Statistic Sidebar widgets can now be collapsible with the `allowCollapse` key.
+** Statistic Sidebar widgets can now be hidden with `'display' => true` on the row configuration.
+
+* *Modals:*
+** Added a new Record Modal.
+** Added a new field grid modal.
+** You can now add descriptions on modals.
+** Modals can now be minimizable using the `'minimizable' => true` via the definition.
+** Dynamic labels can also be used on modals.
+** Modals can have multiple confirmation messages using `confirmationMessages`.
+
+* *Subpanels:*
+** Unwanted subpanels can now be hidden by adding `'hidden' => true` to the definition of the subpanel.
+
+* *Buttons:*
+** Dynamic classes, icons and labels can be used on buttons.
+
+* *Icons:*
+** Icons can now be added on frontend validation by adding the `icon` flag to the returning `label` configuration.
+
+=== icon:heart[] Community
+
+We would love to have your feedback and input to help make SuiteCRM 8 great for everyone.
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors gmcodentech vladaman DavidGalicia boglar-gabor-echobase xkrdudrlf nicholascourage wriver4 scicali BastianHammer %}}
+
+If you have found an issue you think we should know about, or have suggestion/feedback, please link:https://github.com/suitecrm/SuiteCRM-Core/issues[Submit An Issue].
+
+If you want to get involved and submit a fix, fork the repo and when ready please link:https://github.com/suitecrm/SuiteCRM-Core/pulls[Submit A PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Please link:https://suitecrm.com/releases/[visit the official website] to find the appropriate upgrade package.
+
+To report any security issues please follow our link:../../../../community/security-policy[Security Policy]
+
+'''

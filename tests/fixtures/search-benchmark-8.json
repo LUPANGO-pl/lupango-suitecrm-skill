@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "api-v8-authentication",
+      "category": "api-v8",
+      "query": "API V8 authentication",
+      "relevantPaths": ["official/content/developer/integration-api/v8/authentication.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/developer/integration-api/v8/authentication.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": ["**/api-v4.1/**", "**/API-4_1.adoc"],
+      "rationale": "The V8 authentication page documents OAuth2 clients, grants, and access tokens."
+    },
+    {
+      "id": "api-v8-endpoints",
+      "category": "api-v8",
+      "query": "API V8 endpoints",
+      "relevantPaths": ["official/content/developer/integration-api/v8/endpoints.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/developer/integration-api/v8/endpoints.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": ["**/api-v4.1/**"],
+      "rationale": "The endpoints page is the purpose-built reference for V8 API routes."
+    },
+    {
+      "id": "api-v8-installation",
+      "category": "api-v8",
+      "query": "API V8 installation",
+      "relevantPaths": ["official/content/developer/integration-api/v8/installation.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/developer/integration-api/v8/installation.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "The V8 installation page documents the integration API setup procedure."
+    },
+    {
+      "id": "admin-cli-installer",
+      "category": "administration",
+      "query": "running CLI installer",
+      "scope": "suitecrm-8",
+      "topic": "administration",
+      "relevantPaths": ["official/content/8.x/admin/installation-guide/running-the-cli-installer.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/admin/installation-guide/running-the-cli-installer.adoc"],
+      "forbiddenPaths": ["official/content/8.x/admin/installation-guide/running-the-ui-installer.adoc"],
+      "forbiddenPatterns": [],
+      "rationale": "The dedicated CLI installer page, not the UI installer, answers this operation."
+    },
+    {
+      "id": "admin-login-throttling",
+      "category": "administration",
+      "query": "login throttling configuration",
+      "relevantPaths": ["official/content/8.x/admin/configuration/Login-Throttling-Configuration.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/admin/configuration/Login-Throttling-Configuration.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": ["official/content/8.x/admin/configuration/saml/**"],
+      "rationale": "Login attempt throttling belongs to its dedicated configuration page rather than SAML."
+    },
+    {
+      "id": "admin-saml-87",
+      "category": "administration",
+      "query": "SAML 8.7 configuration",
+      "relevantPaths": ["official/content/8.x/admin/configuration/saml/8.7.0-saml-configuration.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/admin/configuration/saml/8.7.0-saml-configuration.adoc"],
+      "forbiddenPaths": ["official/content/8.x/admin/configuration/saml/8.2.0-saml-configuration.adoc"],
+      "forbiddenPatterns": [],
+      "rationale": "The release-qualified query requires the 8.7 SAML page, not the older 8.2 procedure."
+    },
+    {
+      "id": "developer-record-validator",
+      "category": "development",
+      "query": "record validator",
+      "relevantPaths": [
+        "official/content/8.x/developer/extensions/backend/record-validators/_index.en.adoc",
+        "official/content/8.x/developer/metadata/record-view-metadata/record-async-validators.en.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/developer/extensions/backend/record-validators/_index.en.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "Backend record validators and record-view async validators are the two purpose-specific validation pages."
+    },
+    {
+      "id": "developer-process-handler",
+      "category": "development",
+      "query": "process API handler",
+      "relevantPaths": [
+        "official/content/8.x/developer/extensions/backend/process-api/process-handler.en.adoc",
+        "official/content/8.x/developer/extensions/backend/process-api/process-api.en.adoc",
+        "official/content/8.x/developer/extensions/backend/process-api/_index.en.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/developer/extensions/backend/process-api/process-handler.en.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "The process handler page and its immediate process API references describe this extension point."
+    },
+    {
+      "id": "frontend-custom-chart",
+      "category": "frontend",
+      "query": "frontend custom chart",
+      "scope": "suitecrm-8",
+      "topic": "development",
+      "relevantPaths": ["official/content/8.x/developer/extensions/frontend/examples/add-charts-extension.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/developer/extensions/frontend/examples/add-charts-extension.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "The add-charts extension page is the dedicated frontend chart customization example."
+    },
+    {
+      "id": "frontend-88-setup",
+      "category": "frontend",
+      "query": "front end extension setup 8.8+",
+      "relevantPaths": ["official/content/8.x/developer/extensions/frontend/88x-fe-extensions-setup.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/developer/extensions/frontend/88x-fe-extensions-setup.adoc"],
+      "forbiddenPaths": ["official/content/8.x/developer/extensions/frontend/older/8x-fe-extensions-setup.adoc"],
+      "forbiddenPatterns": [],
+      "rationale": "The 8.8+ frontend setup page is release-specific and supersedes the older setup page."
+    },
+    {
+      "id": "metadata-record-view",
+      "category": "metadata",
+      "query": "record view metadata",
+      "relevantPaths": [
+        "official/content/8.x/developer/metadata/record-view-metadata/_index.en.adoc",
+        "official/content/8.x/developer/metadata/customizing-metadata.adoc",
+        "official/content/8.x/developer/metadata/record-view-metadata/record-async-validators.en.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/developer/metadata/record-view-metadata/_index.en.adoc"],
+      "forbiddenPaths": ["official/content/developer/core-framework/metadata.adoc"],
+      "forbiddenPatterns": [],
+      "rationale": "Current record-view and customization pages address SuiteCRM 8 metadata; legacy metadata is not the target."
+    },
+    {
+      "id": "metadata-async-validator",
+      "category": "metadata",
+      "query": "metadata async validator",
+      "relevantPaths": [
+        "official/content/8.x/developer/metadata/fields/field-options/async-validator/_index.en.adoc",
+        "official/content/8.x/developer/metadata/record-view-metadata/record-async-validators.en.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/developer/metadata/fields/field-options/async-validator/_index.en.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "Field-option and record-view async validator pages directly document asynchronous metadata validation."
+    },
+    {
+      "id": "user-two-factor-authentication",
+      "category": "user-features",
+      "query": "two factor authentication",
+      "scope": "suitecrm-8",
+      "topic": "user",
+      "relevantPaths": ["official/content/8.x/user/getting-started/two-factor-authentication.en.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/user/getting-started/two-factor-authentication.en.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": ["official/content/8.x/admin/configuration/saml/**"],
+      "rationale": "The user getting-started page explains two-factor authentication for end users."
+    },
+    {
+      "id": "user-compose-email",
+      "category": "user-features",
+      "query": "compose email",
+      "scope": "suitecrm-8",
+      "topic": "user",
+      "relevantPaths": [
+        "official/content/8.x/user/daily-activities/emails/email-compose.en.adoc",
+        "official/content/8.x/user/daily-activities/emails/_index.en.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/user/daily-activities/emails/email-compose.en.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "The compose workflow and its immediate email guide index are specific user-email documentation."
+    },
+    {
+      "id": "migration-before",
+      "category": "migration",
+      "query": "before you migrate",
+      "relevantPaths": [
+        "official/content/8.x/admin/migration/before-you-migrate.adoc",
+        "official/content/8.x/admin/migration/_index.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/admin/migration/before-you-migrate.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": ["official/content/8.x/admin/upgrading/**"],
+      "rationale": "Migration prerequisites belong to the before-you-migrate page and migration guide, not upgrade instructions."
+    },
+    {
+      "id": "migration-running",
+      "category": "migration",
+      "query": "running the migration",
+      "relevantPaths": [
+        "official/content/8.x/admin/migration/running-the-migration.adoc",
+        "official/content/8.x/admin/migration/_index.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/admin/migration/running-the-migration.adoc"],
+      "forbiddenPaths": ["official/content/8.x/admin/upgrading/running-the-upgrade.adoc"],
+      "forbiddenPatterns": [],
+      "rationale": "The migration execution page and guide are relevant; the similarly named upgrade operation is forbidden."
+    },
+    {
+      "id": "community-security-policy",
+      "category": "security-lifecycle",
+      "query": "community security policy",
+      "relevantPaths": ["official/content/community/security-policy.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/community/security-policy.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "The community security-policy page is the authoritative page for disclosure and support policy."
+    },
+    {
+      "id": "supported-versions",
+      "category": "security-lifecycle",
+      "query": "currently supported versions",
+      "relevantPaths": ["official/content/community/supported-versions.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/community/supported-versions.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": ["official/content/8.x/admin/releases/**"],
+      "rationale": "Current support status belongs to the lifecycle page rather than historical release notes."
+    },
+    {
+      "id": "storage-azure-blob",
+      "category": "storage",
+      "query": "Azure blob storage",
+      "relevantPaths": [
+        "official/content/8.x/admin/configuration/file-storage/azure-how-to-guide.adoc",
+        "official/content/8.x/admin/configuration/file-storage/file-storage-configuration.adoc",
+        "official/content/8.x/admin/configuration/file-storage/_index.en.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/admin/configuration/file-storage/azure-how-to-guide.adoc"],
+      "forbiddenPaths": ["official/content/8.x/admin/configuration/file-storage/aws-how-to-guide.adoc"],
+      "forbiddenPatterns": [],
+      "rationale": "The Azure provider guide and file-storage configuration pages cover Azure Blob storage; AWS is a different provider."
+    },
+    {
+      "id": "storage-media-lifecycle",
+      "category": "storage",
+      "query": "media object lifecycle",
+      "relevantPaths": [
+        "official/content/8.x/admin/configuration/file-storage/media-object-lifecycle.adoc",
+        "official/content/8.x/admin/configuration/file-storage/file-storage-configuration.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/admin/configuration/file-storage/media-object-lifecycle.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "The media-object lifecycle page and storage configuration reference directly cover stored media behavior."
+    },
+    {
+      "id": "async-messenger-setup",
+      "category": "async",
+      "query": "async Messenger setup",
+      "relevantPaths": [
+        "official/content/8.x/admin/async-tasks/Messenger-Setup.en.adoc",
+        "official/content/8.x/admin/async-tasks/Configuration.en.adoc",
+        "official/content/8.x/admin/async-tasks/_index.en.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/admin/async-tasks/Messenger-Setup.en.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "Messenger setup and its immediate async-task configuration pages describe this runtime setup."
+    },
+    {
+      "id": "async-task-architecture",
+      "category": "async",
+      "query": "async task architecture",
+      "relevantPaths": [
+        "official/content/8.x/developer/extensions/backend/async-tasks/async-task-architecture.en.adoc",
+        "official/content/8.x/developer/extensions/backend/async-tasks/_index.en.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/8.x/developer/extensions/backend/async-tasks/async-task-architecture.en.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "The backend async-task architecture page and its section index document the extension architecture."
+    },
+    {
+      "id": "legacy-logic-hooks",
+      "category": "legacy",
+      "query": "legacy logic hooks",
+      "scope": "legacy-in-8",
+      "relevantPaths": ["official/content/developer/core-framework/logic-hooks.adoc"],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/developer/core-framework/logic-hooks.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "The retained Logic Hooks page is the evidence-backed legacy extension reference."
+    },
+    {
+      "id": "legacy-vardefs",
+      "category": "legacy",
+      "query": "legacy vardefs",
+      "relevantPaths": [
+        "official/content/developer/core-framework/vardefs.adoc",
+        "official/content/8.x/developer/extensions/backend/fields/vardef-config-mapper/_index.en.adoc"
+      ],
+      "relevantPatterns": [],
+      "expectedPaths": ["official/content/developer/core-framework/vardefs.adoc"],
+      "forbiddenPaths": [],
+      "forbiddenPatterns": [],
+      "rationale": "The retained Vardefs reference and current vardef mapper page are purpose-specific field-definition evidence."
+    }
+  ]
+}

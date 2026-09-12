@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify (${{ matrix.os }}, Node ${{ matrix.node }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ['20', '22', '24']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm run build
+      - run: npm run validate
+      - run: npm test
+      - run: npm run benchmark
+      - run: npm run docs:check
+      - name: Ensure committed packages match the build
+        run: git diff --exit-code -- dist/manifest.json dist/suitecrm-expert-skill-openai.zip dist/suitecrm-expert-skill-opencode.zip
+      - name: Upload verified release assets
+        if: matrix.os == 'ubuntu-latest' && matrix.node == '24'
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-assets
+          if-no-files-found: error
+          path: |
+            dist/suitecrm-expert-skill-openai.zip
+            dist/suitecrm-expert-skill-opencode.zip
+            dist/manifest.json

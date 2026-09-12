@@ -1,0 +1,439 @@
+---
+title: "8.2 Releases"
+weight: 9860
+aliases:
+  - /8.x/admin/releases/8.2/
+---
+
+:toc:
+:toc-title:
+:toclevels: 1
+:icons: font
+:imagesdir: /images/en/8.x/admin/release
+
+== 8.2.4
+
+_Released 02/03/2023_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.2.4[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.2.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:star[] Documentation
+
+* We have added a page specifically for system performance enhancements within SuiteCRM 8. See more information link:../../installation-guide/performance[here.]
+* We have also updated the `.htaccess` documentation regarding the values set for `RewriteBase`. See more link:../../installation-guide/downloading-installing[here.]
+
+
+==== icon:lock[] Security
+
+* CVE: Pending - RCE Vulnerability
+* CVE: Pending - Stored XSS Vulnerability
+* CVE: Pending - Stored XSS Vulnerability
+* CVE: Pending - SSRF Vulnerability
+
+==== icon:bug[] Bug Fixes
+
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/203[203] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/202[#202] - CSRFCookieListener: remove RouteMatcherInterface type property to $routeMatcher
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/222[222] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/206[#206] - Email Subject Line
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9666[9666] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9665[#9665] - Set unique id for "Reset module" button in studio
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9742[9742] - Fix Closing count bracket before relational operator PHP 8.0 count throwing TypeError
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9751[9751] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9750[#9750] - Receive related parameters of type dynamicenum in workflow formulas
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9796[9796] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/4646[#4646] - Hard coded messages in Surveys module
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9836[9836] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9835[#9835] - Case Updates save bug
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9872[9872] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9871[#9871] - Javascript message error when bulk updating all user records
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9874[9874] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9873[#9873] - Plesk php.ini disable_functions = opcache_get_status
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9882[9882] - Fix OPCache install module copy action
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9884[9884] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9883[#9883] - Security Groups do not work with modules whose name exceeds 36 characters.
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9910[9910] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9909[#9909] - Default empty item when creating a new Dropdown field
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9914[9914] - Close #9914 - Update dashboard.scss for dashlet options overflow
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9955[9955] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9926[#9926] - Add missing check on product image upload
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9901[9901] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9900[#9900] - Conditions doesn't recognize some of the characters set
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9954[9954] - Fix Campaign Parenthesis
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9813[9813] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9344[#9344] - Error in Browsers console after adding tabs to Quickcreate: function selectTabOnError
+
+=== icon:heart[] Community
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors SinergiaCRM rahulshinde19 likhobory JanSiero 2xaronl Lukio pabaillon %}}
+
+_Special thanks to everyone who reported the security issues addressed in this release!_
+
+Nico Weidmann(SAP Security Research), Rustam Komildzhonov and Ilja Bulatov
+
+Please https://suitecrm.com/download[visit the official website] to find the appropriate upgrade package.
+
+To report any security issues please follow our Security Process and send them directly to us via email security@suitecrm.com
+
+'''
+
+== 8.2.3
+
+_Released 25/01/2023_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.2.3[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.2.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:star[] Documentation
+
+* SuiteCRM 8.2.3 now has an updated Email Compose From dropdown. This includes some styling and functionality changes.
+For more information see link:../../../../admin/administration-panel/emails/email-compose-from-list[here.]
+
+==== icon:lock[] Security
+
+* CVE: link:https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-45185[2022-45185] - Improper Access Control
+* CVE: Pending - SQL Injection
+* CVE: Pending - Improper Access Control
+* CVE: Pending - Improper Access Control
+* CVE: Pending - Improper Access Control
+* CVE: Pending - Bypass Vulnerability
+* CVE: Pending - Vulnerability: Cross Site Scripting
+
+==== icon:bug[] Bug Fixes
+
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/200[200] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/180[#180] - Fix invalid token
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9906[9906] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9870[#9870] - Fix log level in ImapHandlerFactory
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9905[9905] - Close #9905 - Update email compose from dropdown
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9904[9904] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9878[9879] - Fix inbound email errors on php 8
+
+=== icon:heart[] Community
+
+_Special thanks to everyone who reporting the security issues addressed in this release!_
+
+RIOUX Guilhem, Mark Hupperichs, Vautia, Benoit Luquet, crackcat
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors maurizioaiello kingfisher77 %}}
+
+Please https://suitecrm.com/download[visit the official website] to find the appropriate upgrade package.
+
+To report any security issues please follow our Security Process and send them directly to us via email security@suitecrm.com
+
+'''
+
+== 8.2.2
+
+_Released 22/12/2022_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.2.2[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.2.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+==== icon:star[] Enhancements
+
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9839[9839] - Close #9839 - Add OAuth connection to Inbound emails
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9848[9848] - Close #9848 - Add OAuth external providers module
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9846[9846] - Close #9846 - Add ACL Access Logic Hook
+
+==== icon:bug[] Bug Fixes
+
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9802[9802] - Close #9802 - Diagnostic Checkbox
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9718[9718] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9717[#9717] - Security Suite Group Selector doesn't appear when duplicating records
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9648[9648] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9646[#9646] - Display TinyMCE in Campaigns Form Wizard
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9643[9643] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9574[#9574] - Update method to static for module renaming
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9500[9500] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9499[9499] - Add View Survey Responses Menu item
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9638[9638] - Close #9683 - Elasticsearch indexing and searching using accented characters
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9474[9474] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9473[#9473] - Missing item "Survey" in campainglog_activity_type_dom
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9844[9844] - Close #9844 - ElasticSearch Indexing batch error handling
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9770[9770] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9568[#9568] - Ignore int len when comparing vardefs in newer MySQL versions
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9786[9786] - Close #9786 - Clear caches used by Inline Edition
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9671[9671] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9670[#9670] - Disabling the user profile option about notification of assignments does not work
+
+
+In this release there has been an incredible update to Emails including the following;
+
+=== Update External OAuth Connection Module
+
+- Add `ExternalOAuthConnection` module to allow getting access through OAuth from external providers.
+- Allow setting up Security groups for `ExternalOuthConnections` Emails.
+
+- Configure Microsoft connection provider using a configuration similar to the following:
+
+image:suite8-oauth-provider.png[OAuth Microsoft Connection]
+
+=== Updates to Inbound Emails Module
+
+- Update Inbound Email Views are now identical to other modules.
+
+- Allow the creation of Personal, Group and Bounce mail accounts through create/edit views.
+
+- Allow Security Groups to be set for Inbound Emails.
+- Allow the select between `basic` and `oauth connection` on Inbound Email create/edit views.
+
+- Allow selecting an external oauth connection as the connection to use for authenticating in Inbound Emails.
+
+image:suite8-oauth-connection.png[Inbound OAuth Configuration]
+
+- Remove Inbound Email configuration from profile view.
+
+=== Update Outbound Emails Module
+
+- Allow creating personal Outbound email accounts through Outbound Email module views.
+
+- Allow Security Groups to be set for Outbound Emails.
+- Remove Outbound Email configuration from profile view.
+
+=== Update IMAP connection library | Allow connecting with xoauth
+
+- Add imap2 lib to handle in order to support xoauth login in imap.
+- Add Imap2Handler to be used to connect to IMAP for Oauth connections.
+
+=== Other
+- SAML: re-direct to logged-out page when attribute is mis-configured
+
+
+==== icon:star[] Documentation
+
+* Configure Security Groups for Inbound Email link:../../../../admin/administration-panel/emails/inboundemail-securitygroups[here].
+* Setup a Microsoft OAuth Provider link:../../../../admin/administration-panel/emails/microsoft-oauth-provider-howto[here].
+* Configure Inbound Email with OAuth link:../../../../admin/administration-panel/emails/inboundemail-oauth-howto[here].
+* External OAuth Provider Overview link:../../../../admin/administration-panel/emails/oauth-provider-overview[here].
+
+=== icon:bug[] Known Issues
+
+- Issue: link:https://github.com/SuiteCRM/SuiteCRM/issues/9852[#9852] - New "Move to trash" toggle causing Case Updates to not import
+- Issue: link:https://github.com/SuiteCRM/SuiteCRM/issues/9853[#9853] - Case Macro not populated on Upgrade
+- Issue: link:https://github.com/SuiteCRM/SuiteCRM/issues/9855[#9855] - When a personal oauth connection is used for a group inbound email, the emails break
+- Issue: link:https://github.com/SuiteCRM/SuiteCRM/issues/9856[#9856] - Email listview filtering shows blank result if a criteria with multiple words and spaces is added
+- Issue: link:https://github.com/SuiteCRM/SuiteCRM/issues/9857[#9857] - Email listview filtering shows blank result for IMAP keywords criteria
+- Issue: link:https://github.com/SuiteCRM/SuiteCRM/issues/9854[#9854] - Test settings issue after switching between OAuth and Basic Auth
+- Issue: link:https://github.com/SuiteCRM/SuiteCRM/issues/9858[#9858] - Group Inbound Emails distribution_method field is reset when Editing the record again
+- Issue: link:https://github.com/SuiteCRM/SuiteCRM/issues/9867[#9867] - Inbound Email's "SSL" checkbox does not retain Checked status after Upgrade
+
+==== icon:star[] Styling
+
+* Legacy Styling Changes
+** UserProfile Layout Tab Styling Fixes
+** Admin Advanced Tab Restyling Fixes
+** Studio Module Builder Styling Fixes
+** Firefox Dropdown Styling Fixes
+** ListView Pagination Styling Fixes
+** Case Modules Styling Fixes
+** Admin Password Page Restyling Fixes
+** Editview Buttons Styling Fixes for Mobile
+** Import Listview Pagination Arrow Styling Fixes
+** Import Page Styling Fixes
+** Action Dropdown Detailview Styling Fixes
+** Upload Button Alignment Styling Fixes
+** User/Administrator Text Styling Fixes
+** User Wizard Welcome Page styling fixes
+** Reminders Panel Styling Fixes
+
+
+=== icon:heart[] Community
+
+We would like to take this opportunity to thank the following members for their contributions and participation in this release:
+
+{{% ghcontributors SinergiaCRM QuickCRM pgorod 2xaronl th-adavidson bitnamiNoob %}}
+
+We will continue to enhance SuiteCRM 8 with new features and improvements, the latest of which can be found on our link:https://suitecrm.com/suitecrm-roadmap/[Road Map].
+
+In the meantime, if you have found an issue you think we should know about, or have a suggestion/feedback, please link:https://github.com/SuiteCRM/SuiteCRM-Core/issues[Submit An Issue]. Before raising an issue please be sure to check the link:https://docs.suitecrm.com/8.x/admin/releases/[Release Notes and list of Known Issues].
+
+If you want to get involved or submit a Fix, fork the repo and when ready please link:https://github.com/SuiteCRM/SuiteCRM-Core/pulls[Submit An PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Check the following documentation page for more information on how to upgrade between SuiteCRM 8 versions link:https://docs.suitecrm.com/8.x/admin/installation-guide/upgrading/[Upgrading documentation]
+
+To report any security issues please follow our Security Process and send them directly to us via email security@suitecrm.com
+
+More information regarding our Security Process can be found https://docs.suitecrm.com/community/raising-issues/#_security[here].
+
+'''
+
+
+== 8.2.1
+
+_Released 17/11/2022_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.2.1[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.2.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:bug[] Bug Fixes
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/160[160] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/61[#61] and https://github.com/SuiteCRM/SuiteCRM-Core/issues/81[#81] - Allow user to see dates in their time and format
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/164[164] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/59[#59] - "Bad data passed in;" When trying to forward reply to emails
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/159[159] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/117[#117] - Disappearing Main Menu for Users With Multiple Inboxes
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/158[158] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/155[#155] - Dynamic Dropdown in Suitecrm 8 using parent enum Labels instead of values
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/140[140] - Fix #140 - Resolve MySQL error
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/132[132] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/131[#131] - Cannot login if username is associated with deleted user
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9795[9795] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/6756[#6756] - Add Label to Dynamic Fields
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9803[9803] - Fix #9803 - Workflow test returns boolean
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9804[9804] - Update jquery-ui to 1.13.2
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9566[9566] - Turn privates to protecteds to fix Emailtemplate overrides
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9567[9567] - Turn private to protected to fix SendMail AOW_Action overrides
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9557[9557] - fix escapeField where $cell string is empty
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9801[9801] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9800[#9800] Fix issue with send as system being hidden
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9614[9614] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/7030[#7030] - Errors in Workflow operators Contains, Starts with and Ends with
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9651[9651] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9650[#9650] - Deprecated constructor method is being called in Calendar
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9659[9659] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9658[#9658] - SuiteCRM add duplicate dashlet when filter is used
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9669[9669] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9668[#9668] - It is not possible to use a custom template for password change
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9673[9673] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9672[#9672] - Bug in CSS class causes bad button display
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9675[9675] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9674[#9674] - Error when importing (creating and updating) a record with ID already deleted in the database
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9689[9689] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9688[#9688]: Use the same browser title for the regular views
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9699[9699] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9698[#9698] - Do not delete the subject when editing a tracking url from the campaign assistant
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9705[9705] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9704[#9704] - Missing relationship definition in SurveysQuestionResponses
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9707[9707] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9706[#9706] - ModuleBuilder doesn't save language files in the correct
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9712[9712] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9711[#9711] - Update date_modified field when deleting a Target List
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9722[9722] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9721[#9721] - Adding Years option to aow_date_type_list in Workflow conditions
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9729[9729] - Fix #9728 - cron.php fails with "must be compatible" error
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9731[9731] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9730[#9730] - cron.php fails with fatal TypeError using PHP 8
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9754[9754] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9753[#9753] - Do not save white spaces in SMTP data
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9785[9785] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9781[#9781] Fetch existing Call/Meeting Reminder data in quickeditview
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9791[9791] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9588[#9588] -  search were ignored if searchQuery was not set in user's preference
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9790[9790] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/7827[#7827] - Error resetting modules
+
+=== icon:heart[] Community
+
+We would like to take this opportunity to thank the following members for their contributions and participation in this release:
+
+{{% ghcontributors abuzarfaris eggsurplus FR-JS pgorod mattkeenan SinergiaCRM kgaillot urdhvatech likhobory pavithra-selvam jonatanestam %}}
+
+We will continue to enhance SuiteCRM 8 with new features and improvements, the latest of which can be found on our link:https://suitecrm.com/suitecrm-roadmap/[Road Map].
+
+In the meantime, if you have found an issue you think we should know about, or have a suggestion/feedback, please link:https://github.com/SuiteCRM/SuiteCRM-Core/issues[Submit An Issue]. Before raising an issue please be sure to check the link:https://docs.suitecrm.com/8.x/admin/releases/[Release Notes and list of Known Issues].
+
+If you want to get involved or submit a Fix, fork the repo and when ready please link:https://github.com/SuiteCRM/SuiteCRM-Core/pulls[Submit An PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Check the following documentation page for more information on how to upgrade between SuiteCRM 8 versions link:https://docs.suitecrm.com/8.x/admin/installation-guide/upgrading/[Upgrading documentation]
+
+To report any security issues please follow our Security Process and send them directly to us via email security@suitecrm.com
+
+More information regarding our Security Process can be found https://docs.suitecrm.com/community/raising-issues/#_security[here].
+
+'''
+
+== 8.2.0
+
+_Released 11/10/2022_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.2.0[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.2.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:star[] Documentation
+* Add 7.12.x to 8.x migration documentation - link:../../../../8.x/admin/legacy-migration/8.2.0-legacy-migration/[7.12 Migration Documentation]
+* Add step to check config and htaccess to install documentation - link:../../../../8.x/admin/installation-guide/downloading-installing[Installation Documentation]
+* Update 8.x upgrade guide with new upgrade steps - link:../../../../8.x/admin/installation-guide/upgrading[Upgrade Documentation]
+
+==== icon:star[] Enhancements
+
+==== SuiteCRM 7.12.x to SuiteCRM 8 Migration
+
+* A migration path from version 7.12+ to 8.x has been added. Please see the following documentation page for instructions on how to upgrade link:../../../../8.x/admin/legacy-migration/8.2.0-legacy-migration/[here.]
+
+==== LDAP and SAML Authentication
+Authentication with LDAP and SAML (including SAML's user auto creation) has been added, to make it easier to access SuiteCRM by using the same credentials that you may use to access other applications.
+
+To see how to setup and configure the authentication methods, please see the following documentation:
+
+** link:../../../../8.x/admin/configuration/ldap-configuration/[LDAP Setup and Configuration]
+** link:../../../../8.x/admin/configuration/saml-configuration/[SAML Setup and Configuration]
+
+==== Duplicate View
+When duplicating a record, you will now see the ‘Create’ page for that module:
+
+image:duplicate-view.png[Duplicate View]
+
+==== Bulk Select Subpanel
+When viewing a subpanel, the Link option has replaced the Select option from the actions drop down. Similar to the Select option, this option will display a pop-up window where one or more records can be selected, to associate with the parent record.
+
+image:BulkSelect.png[Bulk Select]
+
+==== History Timeline
+When viewing the History timeline, you are now able to click on an entry to view the related record’s detail:
+
+image:history-timeline.png[History Timeline]
+
+==== icon:bug[] Bug Fixes
+
+==== Graphql API
+Previously when navigating to ‘http://myhost/index.php#/accounts’ or ‘http://myhost/#/accounts’, the API calls always pointed to ‘http://myhost/api/graphql’ incorrectly.
+We have therefore updated this to ensure the Graphql calls point to the correct location pathname instead.
+
+==== System Name
+After changing the `System Name` setting in the System Settings, you will now see this change in the browser.
+
+==== Top Widget Changes
+Previously when viewing the top widgets, if there is no information the ‘-’ character would be displayed. This has now been changed to make it clear there is no information to display.
+
+==== History and Activity Subpanel Icons
+Icons have been added to both the History and Activity subpanels to show which module a record is associated.
+
+==== Github PR's
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/160[160] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/61[#61] and https://github.com/SuiteCRM/SuiteCRM-Core/issues/81[#81] - Allow user to see dates in their time and format
+
+==== icon:star[] Styling
+
+* Legacy Styling Changes
+** Campaign Mobile Styling Fixes
+** Email Settings Mobile Fixes
+** Inbound Email Mobile Styling Fixes
+** Email Queue Mobile Styling Fixes
+** Save & Cancel Button Overlapping Styling Fixes
+** ListView Styling Changes - Column Chooser & Filter Fixes
+** Document iframe page styling fixes
+** Email Compose Field Width Styling Fixes
+** Resource Calendar Styling Fixes
+** Upload File Btn Styling Fixes
+** Group User Page Styling Fixes
+** Fix Roles Labels
+** Timezone Modal Changes
+** ActionDropdown Label updates
+** Import VCard updates
+** Outbound Email Mobile updates
+
+* Other Styling Changes
+** UserWizard Final Page Styling Fixes
+** Subpanel Icons Styling Fixes
+** Subpanel Dropdown Styling Fixes
+** User Wizard Mobile Styling Fixes
+** Update Security Group labels
+** User Signature text alignment
+
+=== icon:heart[] Community
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors eojedapilchik jyotiraghav93 mcube27 bfoese %}}
+
+We hope you find these enhancements and improvements useful, and we look forward to any feedback you may have.
+
+We will continue to enhance SuiteCRM 8 with new features and fixes and have outlined our short term link:https://suitecrm.com/suitecrm-roadmap/[Road Map], which will provide an overview of things to come.
+
+If you have found an issue you think we should know about, or have a suggestion/feedback, please link:https://github.com/SuiteCRM/SuiteCRM-Core/issues[Submit An Issue]. Before raising an issue please be sure to check the link:https://docs.suitecrm.com/8.x/admin/releases/[Release Notes and list of Known Issues].
+
+If you want to get involved or submit a Fix, fork the repo and when ready please link:https://github.com/SuiteCRM/SuiteCRM-Core/pulls[Submit An PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Check the following documentation page for more information on how to upgrade between SuiteCRM 8 versions link:https://docs.suitecrm.com/8.x/admin/installation-guide/upgrading/[Upgrading documentation]
+
+To report any security issues please follow our Security Process and send them directly to us via email security@suitecrm.com
+
+More information regarding our Security Process can be found https://docs.suitecrm.com/community/raising-issues/#_security[here].
+
+'''

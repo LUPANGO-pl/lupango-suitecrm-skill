@@ -1,0 +1,4 @@
+# Preserve hashed source bytes and deterministic ZIP input across Windows checkouts.
+* -text
+# Preserve upstream formatting; hashes validate these verbatim source files.
+skill/suitecrm-expert-skill/references/official/content/** -whitespace

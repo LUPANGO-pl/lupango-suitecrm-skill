@@ -1,0 +1,368 @@
+{
+  "method": "Scoped expected-path retrieval; rank is first labelled expected path; absent=0. Not a model behavior score.",
+  "cases": 24,
+  "hitAt3": 1,
+  "recallAt10": 1,
+  "mrr": 0.9375,
+  "results": [
+    {
+      "id": "api-v8-authentication",
+      "query": "API V8 authentication",
+      "scope": "shared-api-v8",
+      "expectedPaths": [
+        "official/content/developer/integration-api/v8/authentication.adoc"
+      ],
+      "rank": 2,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/developer/integration-api/v8/_index.adoc",
+        "official/content/developer/integration-api/v8/authentication.adoc",
+        "official/content/developer/integration-api/v8/extending.adoc"
+      ]
+    },
+    {
+      "id": "api-v8-endpoints",
+      "query": "API V8 endpoints",
+      "scope": "shared-api-v8",
+      "expectedPaths": [
+        "official/content/developer/integration-api/v8/endpoints.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/developer/integration-api/v8/endpoints.adoc",
+        "official/content/developer/integration-api/v8/_index.adoc",
+        "official/content/developer/integration-api/v8/extending.adoc"
+      ]
+    },
+    {
+      "id": "api-v8-installation",
+      "query": "API V8 installation",
+      "scope": "shared-api-v8",
+      "expectedPaths": [
+        "official/content/developer/integration-api/v8/installation.adoc"
+      ],
+      "rank": 2,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/developer/integration-api/v8/_index.adoc",
+        "official/content/developer/integration-api/v8/installation.adoc",
+        "official/content/developer/integration-api/v8/extending.adoc"
+      ]
+    },
+    {
+      "id": "admin-cli-installer",
+      "query": "running CLI installer",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/admin/installation-guide/running-the-cli-installer.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/admin/installation-guide/running-the-cli-installer.adoc"
+      ]
+    },
+    {
+      "id": "admin-login-throttling",
+      "query": "login throttling configuration",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/admin/configuration/Login-Throttling-Configuration.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/admin/configuration/Login-Throttling-Configuration.adoc"
+      ]
+    },
+    {
+      "id": "admin-saml-87",
+      "query": "SAML 8.7 configuration",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/admin/configuration/saml/8.7.0-saml-configuration.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/admin/configuration/saml/8.7.0-saml-configuration.adoc"
+      ]
+    },
+    {
+      "id": "developer-record-validator",
+      "query": "record validator",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/developer/extensions/backend/record-validators/_index.en.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/developer/extensions/backend/record-validators/_index.en.adoc",
+        "official/content/8.x/developer/metadata/record-view-metadata/record-async-validators.en.adoc",
+        "official/content/8.x/developer/metadata/fields/field-options/async-validator/_index.en.adoc"
+      ]
+    },
+    {
+      "id": "developer-process-handler",
+      "query": "process API handler",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/developer/extensions/backend/process-api/process-handler.en.adoc"
+      ],
+      "rank": 2,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/developer/extensions/backend/process-api/process-api.en.adoc",
+        "official/content/8.x/developer/extensions/backend/process-api/process-handler.en.adoc",
+        "official/content/8.x/developer/extensions/backend/process-api/_index.en.adoc"
+      ]
+    },
+    {
+      "id": "frontend-custom-chart",
+      "query": "frontend custom chart",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/developer/extensions/frontend/examples/add-charts-extension.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/developer/extensions/frontend/examples/add-charts-extension.adoc",
+        "official/content/8.x/developer/extensions/frontend/examples/add-sidebar-widget.adoc",
+        "official/content/8.x/developer/extensions/frontend/logic/record-logic/_index.en.adoc"
+      ]
+    },
+    {
+      "id": "frontend-88-setup",
+      "query": "front end extension setup 8.8+",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/developer/extensions/frontend/88x-fe-extensions-setup.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/developer/extensions/frontend/88x-fe-extensions-setup.adoc"
+      ]
+    },
+    {
+      "id": "metadata-record-view",
+      "query": "record view metadata",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/developer/metadata/record-view-metadata/_index.en.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/developer/metadata/record-view-metadata/_index.en.adoc",
+        "official/content/8.x/developer/metadata/customizing-metadata.adoc",
+        "official/content/8.x/developer/metadata/record-view-metadata/record-async-validators.en.adoc"
+      ]
+    },
+    {
+      "id": "metadata-async-validator",
+      "query": "metadata async validator",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/developer/metadata/fields/field-options/async-validator/_index.en.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/developer/metadata/fields/field-options/async-validator/_index.en.adoc",
+        "official/content/8.x/developer/metadata/record-view-metadata/record-async-validators.en.adoc"
+      ]
+    },
+    {
+      "id": "user-two-factor-authentication",
+      "query": "two factor authentication",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/user/getting-started/two-factor-authentication.en.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/user/getting-started/two-factor-authentication.en.adoc"
+      ]
+    },
+    {
+      "id": "user-compose-email",
+      "query": "compose email",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/user/daily-activities/emails/email-compose.en.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/user/daily-activities/emails/email-compose.en.adoc",
+        "official/content/8.x/user/daily-activities/email-setup.en.adoc",
+        "official/content/8.x/user/marketing-outreach/email-templates.en.adoc"
+      ]
+    },
+    {
+      "id": "migration-before",
+      "query": "before you migrate",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/admin/migration/before-you-migrate.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/admin/migration/before-you-migrate.adoc",
+        "official/content/8.x/admin/migration/older-versions/8.2.0-legacy-migration.adoc"
+      ]
+    },
+    {
+      "id": "migration-running",
+      "query": "running the migration",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/admin/migration/running-the-migration.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/admin/migration/running-the-migration.adoc",
+        "official/content/8.x/admin/async-tasks/Manual-Migration-Tasks.en.adoc",
+        "official/content/8.x/admin/migration/older-versions/8.2.0-legacy-migration.adoc"
+      ]
+    },
+    {
+      "id": "community-security-policy",
+      "query": "community security policy",
+      "scope": "current-online",
+      "expectedPaths": [
+        "official/content/community/security-policy.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/community/security-policy.adoc"
+      ]
+    },
+    {
+      "id": "supported-versions",
+      "query": "currently supported versions",
+      "scope": "current-online",
+      "expectedPaths": [
+        "official/content/community/supported-versions.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/community/supported-versions.adoc",
+        "official/content/community/security-policy.adoc"
+      ]
+    },
+    {
+      "id": "storage-azure-blob",
+      "query": "Azure blob storage",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/admin/configuration/file-storage/azure-how-to-guide.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/admin/configuration/file-storage/azure-how-to-guide.adoc"
+      ]
+    },
+    {
+      "id": "storage-media-lifecycle",
+      "query": "media object lifecycle",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/admin/configuration/file-storage/media-object-lifecycle.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/admin/configuration/file-storage/media-object-lifecycle.adoc"
+      ]
+    },
+    {
+      "id": "async-messenger-setup",
+      "query": "async Messenger setup",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/admin/async-tasks/Messenger-Setup.en.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/admin/async-tasks/Messenger-Setup.en.adoc"
+      ]
+    },
+    {
+      "id": "async-task-architecture",
+      "query": "async task architecture",
+      "scope": "suitecrm-8",
+      "expectedPaths": [
+        "official/content/8.x/developer/extensions/backend/async-tasks/async-task-architecture.en.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/8.x/developer/extensions/backend/async-tasks/async-task-architecture.en.adoc",
+        "official/content/8.x/admin/async-tasks/_index.en.adoc",
+        "official/content/8.x/developer/extensions/backend/async-tasks/_index.en.adoc"
+      ]
+    },
+    {
+      "id": "legacy-logic-hooks",
+      "query": "legacy logic hooks",
+      "scope": "legacy-in-8",
+      "expectedPaths": [
+        "official/content/developer/core-framework/logic-hooks.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/developer/core-framework/logic-hooks.adoc"
+      ]
+    },
+    {
+      "id": "legacy-vardefs",
+      "query": "legacy vardefs",
+      "scope": "legacy-in-8",
+      "expectedPaths": [
+        "official/content/developer/core-framework/vardefs.adoc"
+      ],
+      "rank": 1,
+      "forbidden": [],
+      "wrongScope": false,
+      "top3": [
+        "official/content/developer/core-framework/vardefs.adoc"
+      ]
+    }
+  ]
+}

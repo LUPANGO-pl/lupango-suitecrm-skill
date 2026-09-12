@@ -1,0 +1,344 @@
+---
+title: "8.1 Releases"
+weight: 9870
+aliases:
+  - /8.x/admin/releases/8.1/
+---
+
+:toc:
+:toc-title:
+:toclevels: 1
+:icons: font
+
+== 8.1.3
+
+_Released 16/08/2022_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.1.3[Github - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.2.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:lock[] Security
+
+* CVE: Pending - Improper Authorization
+* CVE: Pending - Improper Authorization
+
+[discrete]
+
+==== icon:bug[] Bug Fixes
+
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/141[141] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/94[#94] - Enable debounce for action buttons by default
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/135[135] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/112[#112] - Change validation check to improve performance
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/134[134] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/56[#56] - Redirect to last URL after login
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9736[9736] - Fix #9736 - ElasticSearch still running repair if not enabled
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9735[9735] - Fix #9735 - Add Elastic Search Repair option to Admin->Repair Menu
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9512[9512] - Fix #9512 - Case Updates Thread now displays updates from 'Unknown' sources
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9686[9686] - Fix #9686 - Draft Email Opens in Draft View From History Subpanel
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9314[9314] - Fix #9314 - Respect the subpanel flat flag
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9608[9608] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9421[#9421] - Elastic search logic hooks fail to index properly
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9593[9539] - Fix #9539 - Fix Elasticsearch indexing unnecessarily during QR+R
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9599[9599] - Fix #9599 - Fix missing pagination on Elasticsearch Results
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9628[9628] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9627[#9627] - Studio changes not picked up by CRM when opcache.validate_timestamps=0
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9662[9662] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9660[#9660] - Copy only select files to custom/working directory
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9664[9664] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9663[#9663] - Smaller screens automatically collapse non-subpanel panels
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9591[9591] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9547[#9547] - Workflow actions not saving correctly for certain field types
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9163[9163] - Fix #9163 - listviewdefs.php for Outbound Email Accounts module to use correct by default
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9561[9561] - Fix #9561 - with search where fail state was not handled when missing listviewdefs.php file
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9609[9609] - Fix #9609 - Change the logger level in setStream and getStream functions to prevent excessive log errors
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9570[9570] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9569[#9569] - Fix issue with missing dropdown image
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9546[9546] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9545[#9545] - Quote potential reserved name
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9552[9552] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9551[#9551] - Update date period to include the users TZ
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9597[9597] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9594[#9594] - Don't convert nl to BR for contact updates
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9635[9635] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9634[#9634] - Add check on cron to show the basic view on first load
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9637[9637] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9636[#9639] - Add styling of email recipient button
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9604[9604] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9258[#9258] - Fix for Notes module advanced date-modified search
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9603[9603] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9267[#9267] - Fix for popup &email reminder options
+
+
+=== icon:heart[] Community
+
+We would love to have you feedback and input to help make SuiteCRM 8 Great for everyone.
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors marcoblancas andresrom1 FR-JS SinergiaCRM lokeshbhandari25 scicali %}}
+
+_Special thanks to everyone who reported the security issues addressed in this release!_
+
+Vladimir Razov (Positive Technologies)
+
+SuiteCRM 8 marks our biggest SuiteCRM upgrade to date and we are very excited to be sharing it with you. In the coming months, we will continue to enhance SuiteCRM 8 with new features and issue fixes. For more information regarding this, please see our link:https://suitecrm.com/suitecrm-roadmap/[Road Map] which will provide further information on what can be expected from future releases.
+
+If you have found an issue you think we should know about, or have a suggestion/feedback, please link:https://github.com/SuiteCRM/SuiteCRM-Core/issues[Submit An Issue]. Before raising an issue please be sure to check the link:https://docs.suitecrm.com/8.x/admin/releases/[Release Notes and list of Known Issues].
+
+If you want to get involved or submit a Fix, fork the repo and when ready please link:https://github.com/SuiteCRM/SuiteCRM-Core/pulls[Submit An PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Check the following documentation page for more information on how to upgrade between SuiteCRM 8 versions link:https://docs.suitecrm.com/8.x/admin/installation-guide/upgrading/[Upgrading documentation]
+
+To report any security issues please follow our Security Process and send them directly to us via email security@suitecrm.com
+
+More information regarding our Security Process can be found https://docs.suitecrm.com/community/raising-issues/#_security[here].
+
+'''
+
+== 8.1.2
+
+_Released 06/06/2022_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.1.2[Github - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.2.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:warning[] Important Upgrade Notes
+
+An issue was found on the current implementation of the upgrade command. Please see the following page for more details:
+link:https://docs.suitecrm.com/8.x/admin/installation-guide/upgrading/#_possible_issues_when_upgrading[Upgrading SuiteCRM 8 - Section Possible Issues when Upgrading]
+
+Documentation added on how to configure sessions in SuiteCRM 8. See link:https://docs.suitecrm.com/8.x/admin/configuration/Sessions-Configuration[here.]
+
+==== icon:star[] Enhancements & Bug Fixes
+
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/110[110] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/109[#109] - Add force exit to upgrade process
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/108[108] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/98[#98] - Fix install error
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/107[107] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/106[#106] - Add session_dir init check
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/102[102] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/101[#101] - Parsing Error in UserHandler
+
+=== icon:heart[] Community
+
+We would love to have you feedback and input to help make SuiteCRM 8 Great for everyone.
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors phil8900 prbt2016 %}}
+
+SuiteCRM 8 marks our biggest SuiteCRM upgrade to date and we are very excited to be sharing it with you. In the coming months, we will continue to enhance SuiteCRM 8 with new features and issue fixes. For more information regarding this, please see our link:https://suitecrm.com/suitecrm-roadmap/[Road Map] which will provide further information on what can be expected from future releases.
+
+If you have found an issue you think we should know about, or have a suggestion/feedback, please link:https://github.com/SuiteCRM/SuiteCRM-Core/issues[Submit An Issue]. Before raising an issue please be sure to check the link:https://docs.suitecrm.com/8.x/admin/releases/[Release Notes and list of Known Issues].
+
+If you want to get involved or submit a Fix, fork the repo and when ready please link:https://github.com/SuiteCRM/SuiteCRM-Core/pulls[Submit An PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Check the following documentation page for more information on how to upgrade between SuiteCRM 8 versions link:https://docs.suitecrm.com/8.x/admin/installation-guide/upgrading/[Upgrading documentation]
+
+To report any security issues please follow our Security Process and send them directly to us via email security@suitecrm.com
+
+More information regarding our Security Process can be found https://docs.suitecrm.com/community/raising-issues/#_security[here].
+
+'''
+
+== 8.1.1
+
+_Released 24/05/2022_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.1.1[Github - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.2.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+{{% notice warning %}}
+Important: This release includes critical security fixes, we strongly recommend users of older versions to update as soon as possible
+{{% /notice %}}
+
+==== icon:warning[] Important Upgrade Notes
+
+* New entries were added to the config. Please make sure to run `Rebuild Config File` located in the Administration > Repair menu
+* Php session_gc is now force enabled by default.
+** This option can be disabled by setting enable within the session_gc array to false in config.php
+** The values for session.gc_probability and session.gc_divisor can be changed in the following config.php entries within the session_gc array
+*** gc_probability
+*** gc_divisor
+** Check php documentation for more information on these settings https://www.php.net/manual/en/session.configuration.php
+** If you are using a session_dir other than the default, please make sure to have session_gc enabled. Otherwise session files won't be cleaned.
+** If you are using debian or ubuntu based systems, and you have the default session_dir (which fallsback to the system default),
+you may want to set enable within session_gc array to false, as that is the default value for these systems.
+They have replacements for the php session_gc. Please review your system’s defaults before making any changes.
+
+{{% notice note %}}
+In-app configuration for `session save-path` is not supported yet in SuiteCRM 8. It is scheduled to be added on a future release.
+{{% /notice %}}
+
+
+==== icon:lock[] Security
+
+* CVE: Pending - SQL Injection Vulnerability
+* CVE: Pending - SQL Injection Vulnerability
+* CVE: Pending - SQL Injection Vulnerability
+* CVE: Pending - Improper Access Control
+* CVE: Pending - RCE and CSRF Vulnerability
+* CVE: Pending - Authenticated Bypass Vulnerability
+
+==== icon:star[] Enhancements & Bug Fixes
+
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/95[95] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/53[#53] - Remove hardcoded dependency to en_us language. Fix error when en_us is disabled
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/91[91] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/90[#90] - Fix logout. Fix need to refresh after logout
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/89[89] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/86[#86] - Fix date filter operator mapping. Fix date filter operators
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/88[88] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/87[#87] - Fix language selection. Fix language selection being reset after login
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/84[84] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/30[#30] - Fix ApiBeanMapper id and link mapping. Fix custom relationship links
+* PR: link:https://github.com/SuiteCRM/SuiteCRM-Core/pull/80[80] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/78[#78] - Subpanel close button issues. Fix subpanel close button that was leading to duplicate subpanels
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9577[9577] - Update TinyMCE
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9583[9583] - Fix AOR_Report Unit Tests
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9578[9578] - Update Jquery JS Libraries
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/8599[8599] - Auto-close success message boxes in ModuleBuilder
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9584[9584] - Fix link:https://github.com/SuiteCRM/SuiteCRM-Core/issues/87[SCRM-Core#87] - Prevent disabling the default language
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9523[9523] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9438[#9438] - Adding Action keyword to fieldname exception
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9495[9495] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9494[#9494] - Force displaying line breaks to textarea fields
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9580[9580] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9435[#9435] - Dropdown doesn't return empty selected value
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9522[9522] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9435[#9435] - Dropdown doesn't return empty selected value
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9589[9589] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9530[#9530] - Fallback to allowed_preview defaults
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9581[9581] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/3157[#3157] - Add default option to enable session_gc
+* PR: link:https://github.com/SuiteCRM/SuiteCRM/pull/9582[9582] - Fix link:https://github.com/SuiteCRM/SuiteCRM/issues/9437[#9437] - Default cookie path
+
+==== icon:star[] Styling
+
+* General Styling Fixes
+** Accounts Duplicate Screen
+** Surveys
+** Outbound Dialog and Editview
+** Password Management
+** Case Settings
+** Language Desktop
+** Roles Dropdown
+** Maps QuickRadius
+
+* Mobile Styling Fixes
+** History Subpanel
+** Activity Stream
+** Business Hours
+** Connector Settings
+** Admin Language
+** System Settings
+** Display Modules Settings
+
+=== icon:heart[] Community
+
+We would love to have you feedback and input to help make SuiteCRM 8 Great for everyone.
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors SinergiaCRM tsitle shrikantg-packt scicali anothermouse dalers RodolfoPichardo veggydawson %}}
+
+_Special thanks to everyone who reporting the security issues addressed in this release!_
+
+mounta1n, Exodus Intelligence, Lekhang123lc
+
+SuiteCRM 8 marks our biggest SuiteCRM upgrade to date and we are very excited to be sharing it with you. In the coming months, we will continue to enhance SuiteCRM 8 with new features and issue fixes. For more information regarding this, please see our link:https://suitecrm.com/suitecrm-roadmap/[Road Map] which will provide further information on what can be expected from future releases.
+
+If you have found an issue you think we should know about, or have a suggestion/feedback, please link:https://github.com/SuiteCRM/SuiteCRM-Core/issues[Submit An Issue]. Before raising an issue please be sure to check the link:https://docs.suitecrm.com/8.x/admin/releases/[Release Notes and list of Known Issues].
+
+If you want to get involved or submit a Fix, fork the repo and when ready please link:https://github.com/SuiteCRM/SuiteCRM-Core/pulls[Submit An PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Check the following documentation page for more information on how to upgrade between SuiteCRM 8 versions link:https://docs.suitecrm.com/8.x/admin/installation-guide/upgrading/[Upgrading documentation]
+
+To report any security issues please follow our Security Process and send them directly to us via email security@suitecrm.com
+
+More information regarding our Security Process can be found https://docs.suitecrm.com/community/raising-issues/#_security[here].
+
+'''
+
+== 8.1.0
+
+_Released 24/03/2022_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.1.0[Github - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.2.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:star[] Enhancements & Bug Fixes
+
+* Add Recently Viewed Functionality
+- Display Recently Viewed in the Navbar
+
+* Add Favourites Functionality
+- Display Favourites in the Navbar
+- Add Favourite Flag to RecordView
+
+* Disable Legacy Actions
+- Alerts
+- Recently Viewed
+- Favourites Loading
+- LDAP Settings
+- SAML Settings
+
+* Add HTML field to RecordView
+
+* Permanently store User's Preferences for ListView UI changes
+- Table Sort Preferences
+- Column Chooser Preferences
+- Insight Preferences
+- Filter Preferences
+
+* Permanently store User's Preferences for RecordView UI changes
+- Subpanel Open/Close Preferences
+- Subpanel Insights Open/Close Preferences
+- Subpanel Order Preferences
+
+* Performance Enhancements
+- Delay splash screen for quicker performance
+
+* Trim event invite links
+
+==== icon:star[] Styling
+
+* Favourite Star Styling
+* Update styling for User Wizard on mobile devices
+* Style Merge Records classic view
+
+* Update Admin Settings Styling
+- Locale updated on mobile devices
+- ElasticSearch updated on mobile devices
+- Search updated on mobile devices
+- Sales updated on mobile devices
+- Currency updated on mobile devices
+- System Settings updated on mobile devices
+- PDF Settings styling updated
+
+* General Styling Changes
+- Print PDF Settings popup
+- Email Confirmation popup
+- Campaigns
+- Calendar Popup
+** Invitee Panel updated to SuiteCRM8 Styling
+- Email Templates
+- Workflow
+** Fix Actions, Email & Calendar Styling
+- Projects
+** Resource Panel Buttons & Fields Updated to SuiteCRM8 View
+- Maps Config
+- Event Delegate Subpanel
+
+
+=== icon:heart[] Community
+
+We would love to have you feedback and input to help make SuiteCRM 8 Great for everyone.
+
+SuiteCRM 8 marks our biggest SuiteCRM upgrade to date and we are very excited to be sharing it with you. In the coming months, we will continue to enhance SuiteCRM 8 with new features and issue fixes. For more information regarding this, please see our link:https://suitecrm.com/suitecrm-roadmap/[Road Map] which will provide further information on what can be expected from future releases.
+
+If you have found an issue you think we should know about, or have a suggestion/feedback, please link:https://github.com/SuiteCRM/SuiteCRM-Core/issues[Submit An Issue]. Before raising an issue please be sure to check the link:https://docs.suitecrm.com/8.x/admin/releases/[Release Notes and list of Known Issues].
+
+If you want to get involved or submit a Fix, fork the repo and when ready please link:https://github.com/SuiteCRM/SuiteCRM-Core/pulls[Submit An PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Check the following documentation page for more information on how to upgrade between SuiteCRM 8 versions link:https://docs.suitecrm.com/8.x/developer/installation-guide/[Upgrading documentation]
+
+To report any security issues please follow our Security Process and send them directly to us via email security@suitecrm.com
+
+More information regarding our Security Process can be found https://docs.suitecrm.com/community/raising-issues/#_security[here].
+
+'''

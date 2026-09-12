@@ -1,0 +1,294 @@
+---
+title: "8.8 Releases"
+weight: 9800
+aliases:
+  - /8.x/admin/releases/8.8/
+---
+
+:toc:
+:toc-title:
+:toclevels: 1
+:icons: font
+:imagesdir: /images/en/8.x/admin/release
+
+== 8.8.1
+
+_Released 06 August 2025_
+
+=== icon:box-open[] Assets
+
+* https://github.com/suitecrm/SuiteCRM-Core/releases/tag/v8.8.1[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+* link:../../legacy-migration/8.7.0-legacy-migration/[SuiteCRM 8 Migration from SuiteCRM 7]
+
+===  icon:check[] Release Notes
+
+==== icon:star[] Outbound Email Changes
+
+* You are now able to configure an Outbound Email Account with OAuth. To see more information on setup please see link:../../../../admin/administration-panel/emails/inboundemail-oauth-howto[here.]
+
+==== icon:lock[] Security
+
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-54785[CVE-2025-54785: RCE Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-53cp-mpfw-qj67[GitHub Advisory] | Reporter: dzentota
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-54786[CVE-2025-54786: Improper Access Control Vulnerability] | https://github.com/SuiteCRM/SuiteCRM-Core/security/advisories/GHSA-rf2v-4mv3-qcgm[GitHub Advisory] | Reporter: sec31uk
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-54787[CVE-2025-54787: Improper Access Control Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-8r72-224q-g9fv[GitHub Advisory] | Reporter: paul1278
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-54788[CVE-2025-54788: SQL Injection Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-v3m9-8wg7-c72x[GitHub Advisory] | Reporter: Parnuski
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-54783[CVE-2025-54783: XSS Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-vqrj-gp9m-8c6r[GitHub Advisory] | Reporter: Sergio Marín Martínez
+* CVE: https://nvd.nist.gov/vuln/detail/CVE-2025-54784[CVE-2025-54784: XSS Vulnerability] | https://github.com/SuiteCRM/SuiteCRM/security/advisories/GHSA-vg8q-xcq5-mh3p[GitHub Advisory] | Reporter: paul1278
+
+==== icon:bug[] Bug Fixes
+
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/680[680] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/543[#543] - Enable stack trace debugging without whitescreens
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/681[681] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/660[#660] - Account Activity/History Subpanel actions no longer open
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/682[682] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/675[#675] - Implement semantic autocomplete for 2FA fields to prevent Firefox interference
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/683[683] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/611[#611] - Handle special characters in password authentication
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/614[614] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/613[#613] - Fixed Error Occurring If First Report Field Is a Custom Field
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/636[636] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/575[#575] - install page proceed button
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/635[635] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/584[#584] - buttons topover on role subpanel
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/634[634] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/625[#625] - Fix error on decimals
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/655[655] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/566[#566] - Add displayLogic to panels like tabs
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/657[657] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/274[#274], https://github.com/SuiteCRM/SuiteCRM-Core/issues/503[#503] - Listview accented characters
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/662[662] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/540[#540] - Remove title from svgs
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/669[669] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/638[#638] - Exception viewing Symfony Profiler
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/665[665] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/664[#664] - Ldap Autocreate extra fields
+* PR: https://github.com/SuiteCRM/SuiteCRM-Core/pull/668[668] - Fix https://github.com/SuiteCRM/SuiteCRM-Core/issues/137[#137], https://github.com/SuiteCRM/SuiteCRM-Core/issues/582[#582] - Api Access issue in SuiteCRM 8
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10599[10599] - Fix Importing Error Styling
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10565[10565] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10564[#10564] - Thank you message in Surveys only in English
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10549[10549] - Fix variable name typo in getEmailInfo
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10502[10502] - Remove duplicate line
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10480[10480] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10479[#10479] -  Call LoggerManager's warn() method instead of warning()
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10400[10400] - Correctly find the id of related objects in search results
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/9810[9810] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/9809[#9809] - Incorrect parsing of 0 values in PDF templates
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10662[10662] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10661[#10661] - Fix preference on setting role
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10660[10660] - Fix Email Template not saving in plain text
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10659[10659] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10637[#10637] - Local users gets Profile wizard on each login
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10309[10309] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10264[#10264] - Error Assigned_user_name SearchView.tpl ({php} tag now crashes Smarty 4)
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10476[10476] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10475[#10475] - Rename the History subpanel by changing the label
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10649[10649] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/8280[#8280] - Fix Autocomplete search in line items
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10612[10612] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10611[#10612] - Subpanels don't show related records links when view permission is set to "group"
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10607[10607] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10606[#10606] - Recently viewed items tooltip shows module name instead of full record name
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10625[10625] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10624[#10624] - Prevent Multiple Submissions on Survey Forms
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10538[10538] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10243[#10243] - studio not saving field properties correctly
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10285[10285] - Fix non-countable error when importing CSV
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10617[10617] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10616[#10616] - Default values of DateTime always in English and value “first day of next month” gives an error
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10648[10648] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/8632[#8632] -  API V8 /meta/fields/{moduleName} endpoint output without field labels
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10623[10623] - Allow End Users to use the PATCH method for the V8 API
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10601[10601] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10113[#10113] - Contracts / List Items table for services has bogus width
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10544[10544] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10543[#10543] - Remove Security Groups button on subpanelsbased on EditView
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10675[10675] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10147[#10147], https://github.com/SuiteCRM/SuiteCRM/issues/10396[#10369] - Smarty unregistered function deprecated notice
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10378[10378] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10532[10532], https://github.com/SuiteCRM/SuiteCRM/issues/10377[10377] - Fix issues with global search not displaying values correctly
+* PR: https://github.com/SuiteCRM/SuiteCRM/pull/10700[10700] - Fix https://github.com/SuiteCRM/SuiteCRM/issues/10345[#10345] - Azure OAuth Redirect Uri Entrypoint
+
+Other Fixes:
+
+* Fix notice messages preventing importing.
+* Fix Importer progress bar using incorrect values.
+
+=== icon:heart[] Community
+
+We would love to have your feedback and input to help make SuiteCRM 8 great for everyone.
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors BastianHammer MaxSprea nicholascourage jarred-aos wriver4 scicali xkrdudrlf vladaman boglar-gabor-echobase gmcodentech TheGarious g0rbe DavidGalicia ssamko0911 SinergiaCRM LoLei gunnicom desarrollador20 aurelien1980 chris001 604media TwizzX17 pgorod LukaszMaslej kale1d0code restena-sw abuzarfaris Govind-Patel %}}
+
+_Special thanks to everyone who reported the security issues addressed in this release!_
+
+{{% ghcontributors sezio dzentota sec31uk paul1278 Parnuski %}}
+
+If you have found an issue you think we should know about, or have suggestion/feedback, please link:https://github.com/suitecrm/SuiteCRM-Core/issues[Submit An Issue].
+
+If you want to get involved and submit a fix, fork the repo and when ready please link:https://github.com/suitecrm/SuiteCRM-Core/pulls[Submit A PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Please link:https://suitecrm.com/releases/[visit the official website] to find the appropriate upgrade package.
+
+To report any security issues please follow our link:../../../../community/security-policy[Security Policy]
+
+'''
+
+== 8.8.0
+
+_Released 30 January 2025_
+
+=== icon:box-open[] Assets
+
+* https://github.com/SuiteCRM/SuiteCRM-Core/releases/tag/v8.8.0[GitHub - Download]
+* link:../../installation-guide/downloading-installing[SuiteCRM 8 Install Guide]
+* link:../../upgrading[SuiteCRM 8 Upgrade Guide]
+
+===  icon:check[] Release Notes
+
+==== icon:file[] Changes on Upgrade Command/ Process
+
+⚠️ *Important:*  These changes will only apply when upgrading from an installed 8.8+ version to the next version
+
+* Starting with SuiteCRM 8.8.0 onwards, the upgrade process will now show a warning message with the non-core files
+that will be deleted on upgrade.
+* All language files within core directories are now re-added at the end of the upgrade process.
+
+* Changes to the upgrade process configuration. The following directories were added to the toKeep section:
+** public/legacy/upload
+** public/legacy/vendor
+** .git
+** .gitignore
+
+==== icon:level-up-alt[] Platform upgrade
+
+SuiteCRM is now using angular 18. This brings some system requirement updates and breaking changes.
+
+⚠️ *Important:* SuiteCRM is still using Webpack and Module Federation. We will not be using esbuild and Native Federation for the time being.
+
+*[For frontend development]* Please check:
+
+* The link:../../compatibility-matrix/[Compatibility Matrix] page for the updated versions of the required software.
+* The link:../../../../8.x/developer/extensions/frontend/migration/migration-8.8[Frontend extension - Migrate to SuiteCRM 8.8+] section for more information on how to upgrade/migrate extensions.
+
+
+
+==== icon:server[] System Requirement Changes - For development
+
+**Minimum node version - 20.11.1**
+
+The minimum node version is now 20.11.1.
+
+**Minimum yarn version - 4.5.0**
+
+The minimum yarn version is now 4.5.0.
+
+==== icon:code[] Backward Incompatible Changes
+
+* **Frontend common lib has been moved into core**
+** The common lib has been moved from `core/app/common` to `core/app/core/src/lib/common/`
+** See the link:../../../../8.x/developer/extensions/frontend/migration/migration-8.8[Frontend extension - Migrate to SuiteCRM 8.8+] section for more information.
+
+
+* **The angular.json file is now generated**
+** The `angular.json` file is now a generated file and is no longer under version control.
+** See the link:../../../../8.x/developer/extensions/frontend/migration/migration-8.8[Frontend extension - Migrate to SuiteCRM 8.8+] section for more information.
+
+
+* **The configuration for subpanel buttons widgets/stats is now under subpanelWidget**
+** The configuration key for subpanel button widgets has changed from `insightWidget` to `subpanelWidget`.
+
+==== icon:book[] Documentation
+
+We have added new documentation to set up Two-factor Authentication using TOTP on SuiteCRM 8 see the link:../../../../8.x/features/two-factor/two-factor[Two-factor Authentication] section for more information.
+
+==== icon:star[] Enhancements
+
+===== icon:code[] PHP 8.3 Support
+
+This release brings a number of adjustments and updates in order to support PHP 8.3.
+
+This includes:
+
+* Removal of deprecated functions/ features.
+* Fixed code to eliminate warnings/ errors from logs.
+* Update missing labels
+
+==== icon:star[] Filtering on Favorites
+
+You can now filter by `Favorites` and `My Items`.
+
+===== icon:key[] Two-Factor Authentication
+
+We have added Two-factor authentication on SuiteCRM 8 using TOTP. See more information link:../../../../8.x/features/two-factor/two-factor[here.]
+
+image:Qr-2FA.png[8.8.0 Enable Two-Factor Authentication]
+
+⚠️ *Important:* **For upgrades from 8.8-beta to 8.8.0 - Two Factor TOTP Secret and Backup Codes are now encoded in the db.
+This can cause issues when using 2FA configured in the beta. 2FA might need disabled and re-enabled.**
+
+==== icon:paint-brush[] Record View, Subpanel, Top Widget and Timeline Redesign
+
+image:new-record-view.png[8.8.0 Record View]
+
+* Record View
+** The fields within the record view now take up minimal space, allowing you to see the full record.
+** The required field indicator has been moved to the left of the field label.
+
+* Subpanels
+** Subpanels buttons are now more compact and show the number of records a subpanel has.
+** The number of subpanels that show when collapsed is configurable via the `subpanel_buttons_panel_limits.yaml`.
+** Although it is recommended to do these changes within `defaultExt` or alternatively your own extension.
+
+* Timeline
+** Following the other changes, the timeline is also more compact showing more information on the record without scrolling.
+
+* Top Widget
+** The Top Widget has been moved to the insights panel, along with some styling adjustments.
+
+===== Demo Data
+
+SuiteCRM Demo Data has been updated to generate more date and optimized to run faster.
+
+==== icon:cog[] Log file Change
+
+* The log_dir has now been updated to log to `<root>/logs/legacy` instead of `<root>/public/legacy`.
+* For upgrade instances:
+** The `log_dir` on config.php will be updated to a new path, only if it was using the default path.
+** Old log files will not be moved
+
+==== icon:cog[] Performance Updates
+
+* Disabled zone js, for faster front-end performance.
+* Added a delay to non-critical backend calls such as; recently viewed, metadata, and notifications.
+
+==== icon:cog[] Record Mappers
+
+Record Mappers have been added to allow for more flexibility when extending SuiteCRM. They allow to add code for mapping a record to internal or to external format.
+
+See the link:../../../../8.x/developer/extensions/backend/record-mappers/[Record Mappers] section for more information.
+
+==== icon:cog[] Save Handlers
+
+Save handlers are classes that allow the app to run code before or after saving a record. They are similar to the legacy before_save and after_save logic hooks.
+
+See the link:../../../../8.x/developer/extensions/backend/save-handlers/[Save Handlers] section for more information.
+
+==== icon:cog[] Field Logic Update
+
+There are now 3 different types of `triggeringStatus`:
+
+* onDependencyChange
+** When the dependant field changes.
+* onAnyLogic
+** When anything happens (i.e. value update, rendering fields, saving etc...).
+* onFieldInitialize
+** When the Field is rendered (i.e. loading the recordview/ switching tabs on recordview).
+
+==== icon:bug[] Bug Fixes
+
+* Fixed: Subpanel not showing correctly on first load: https://github.com/SuiteCRM/SuiteCRM-Core/issues/511[#511]
+* Fixed: Error field "amount" - SuiteCRM v. 8.5.1: https://github.com/SuiteCRM/SuiteCRM-Core/issues/478[#478]
+* Fixed: Reorder modules from User profile does not change the order in navigation bar: https://github.com/SuiteCRM/SuiteCRM-Core/issues/585[#585]
+* Fixed: Update scripts deletes files with no warning: https://github.com/SuiteCRM/SuiteCRM-Core/issues/475[#475]
+* Fixed: Special character in database password creates issues: https://github.com/SuiteCRM/SuiteCRM-Core/issues/553[#533]
+* Fixed: $addr creating unnecessary logs: https://github.com/SuiteCRM/SuiteCRM-Core/issues/577[#577]
+* Fixed: Error on Email Detail View: https://github.com/SuiteCRM/SuiteCRM-Core/issues/537[#537]
+* Fixed: Accented character (diacritic) displayed incorrectly: https://github.com/SuiteCRM/SuiteCRM-Core/issues/542[#542]
+* Fixed: Accented letters displayed incorrectly: https://github.com/SuiteCRM/SuiteCRM-Core/issues/583[#583]
+* Fixed: TextArea areas show data in html encoded: https://github.com/SuiteCRM/SuiteCRM-Core/issues/589[#589]
+* Fixed: Views Incorrectly Encode UTF Characters as HTML Entities: https://github.com/SuiteCRM/SuiteCRM-Core/issues/274[#274]
+* Fixed: Bug with the number field in case filters: https://github.com/SuiteCRM/SuiteCRM-Core/issues/572[#572]
+* Fixed: Checkbox taking a while to respond with large data set: https://github.com/SuiteCRM/SuiteCRM-Core/issues/597[#597]
+* Fixed: Update New Accounts per Month Chart: https://github.com/SuiteCRM/SuiteCRM-Core/issues/75[#75]
+
+=== icon:heart[] Community
+
+We would love to have your feedback and input to help make SuiteCRM 8 great for everyone.
+
+_Special thanks to the following members for their contributions and participation in this release!_
+
+{{% ghcontributors julibo likhobory GoryMoon cvillarongace  tdelsoglio abuzarfaris pgorod jschoder-ryl AlexMyddleware LoLei mraspor fmarsico70 isalos395 vladaman desarrollador20 %}}
+
+If you have found an issue you think we should know about, or have suggestion/feedback, please link:https://github.com/SuiteCRM/SuiteCRM-Core/issues[Submit An Issue].
+
+If you want to get involved and submit a fix, fork the repo and when ready please link:https://github.com/SuiteCRM/SuiteCRM-Core/pulls[Submit A PR] - More detail for developers can be found link:https://docs.suitecrm.com/8.x/developer/installation-guide/[here].
+
+Please https://suitecrm.com/releases/[visit the official website] to find the appropriate upgrade package.
+
+To report any security issues please follow our Security Process and send them directly to us via email security@suitecrm.com
+
+'''

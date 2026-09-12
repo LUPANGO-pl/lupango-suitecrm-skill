@@ -1,0 +1,16 @@
+---
+title: "Developer Install Guide"
+weight: 30
+---
+
+{{% notice info %}}
+The following documentation is for SuiteCRM Version 8+; to see documentation for Version 7, click link:../../../developer/introduction[here].
+{{% /notice %}}
+
+== Before you start
+
+Please consider going through the link:../developer-getting-started[Developer Getting started] guide. It may simplify part of the process described on the guides listed next.
+
+== Table of Contents
+{{% children depth="3" showhidden="false" %}}
+

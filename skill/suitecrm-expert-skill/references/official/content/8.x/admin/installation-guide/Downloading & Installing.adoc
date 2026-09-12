@@ -1,0 +1,106 @@
+---
+title: Downloading & Installing
+weight: 20
+---
+
+:imagesdir: /images/en/8.x/admin/install-guide
+
+:toc:
+
+{{% notice info %}}
+The following documentation is for SuiteCRM Version 8+; to see documentation on the same topic for Version 7, click link:../../../../admin/installation-guide/downloading-installing[here].
+{{% /notice %}}
+
+
+== 1. Setup Web Server
+
+The first step to take is to setup the webserver.
+
+Please go through the link:../webserver-setup-guide/[Webserver Setup Guide].
+
+'''
+
+== 2. Downloading and Setting up SuiteCRM
+
+=== 2.1 Checking Compatibility Matrix
+
+Make sure your environment meets system requirements listed in link:../../compatibility-matrix/[Compatibility matrix]
+
+=== 2.2 Downloading the latest SuiteCRM files
+
+Unless you want to setup a development environment, you should download the pre-built installable packages available for download on link:https://suitecrm.com/download/[suitecrm.com,window=_blank].
+
+See the link:../../releases/[SuiteCRM 8 Releases page]
+
+=== 2.3 Copy the files to your webserver root
+
+After you download the package
+
+. Unzip the pre-build installable package.
+. Copy the the files to your web server web root.
+
+For `apache` webserver the web root is usually under `/var/www` or `/var/www/html`
+
+{{% notice note %}}
+Please consider the `DocumentRoot` you have set on your vhost (if using apache). See link:../webserver-setup-guide#_4_configuring_url_re_writes[Web Server Setup guide - 4. Configuring URL re-writes]
+{{% /notice %}}
+
+{{% notice note %}}
+Adding the files to the web root is the most typical install method, but you can have different setups, like subdomains and others.
+{{% /notice %}}
+
+=== 2.4 Set permissions
+
+Set the required permissions
+
+If you are using the terminal you can do this by running:
+
+[source,bash]
+----
+find . -type d -not -perm 2755 -exec chmod 2755 {} \;
+find . -type f -not -perm 0644 -exec chmod 0644 {} \;
+find . ! -user www-data -exec chown www-data:www-data {} \;
+chmod +x bin/console
+----
+
+Please have in mind that:
+
+* The user and group name (in the above example `www-data`) needs to be replaced by the actual system user and group that your webserver runs under. This varies depending on your
+operating system. Common web server users are as follows:
+** `www-data` (Ubuntu Linux/Apache)
+** `apache` (Linux/Apache)
+
+* If the group name differs from the username apache is running with, you may need `0664` instead of `0644`, and `2775` instead of `2755`
+
+=== 2.5 (optional) Creating the database
+
+Depending on your setup, you maybe required to create the database before you go through the install process.
+
+The install process will then create the needed tables.
+
+'''
+
+== 3. Running the installer
+
+From SuiteCRM version 8 and above you have two ways to run installer.
+
+* link:../running-the-ui-installer/[Option 1: Installing using the installation page]
+* link:../running-the-cli-installer/[Option 2: Installing using the cli]
+
+'''
+
+== 4. Post-Install Setup
+
+After the installer completes, you need to configure two background processes to keep SuiteCRM running correctly.
+
+=== 4.1 Cron Job (Schedulers)
+
+SuiteCRM requires a cron job to execute scheduled tasks (workflows, email checks, report generation, etc.). Without it, these tasks will not run.
+
+See the link:../../administration-panel/schedulers[Schedulers] page for full instructions on setting up the cron job.
+
+=== 4.2 Messenger Worker (Async Tasks)
+
+Starting from SuiteCRM 8.10, background tasks (such as manual migration tasks) are processed by the Symfony Messenger worker. Without a running worker, these tasks remain in "Pending" status indefinitely.
+
+See the link:../../async-tasks/messenger-setup[Messenger Setup] guide for instructions on configuring the worker for your environment.
